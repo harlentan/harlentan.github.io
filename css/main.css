@@ -61,7 +61,8 @@ margin-right:40px;
 list-style:none; /* 将默认的列表符号去掉 */
 padding:0; /* 将默认的内边距去掉 */
 margin:0; /* 将默认的外边距去掉 */
-padding-right: 50px; 
+border-right:1px solid #DCDCDC;
+padding: 0 20px 0 20px;
 }
 
 .nav_menu li { 
