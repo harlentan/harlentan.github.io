@@ -38,9 +38,8 @@ WebCore线程消息循环最主要的handler。任何需要调用WebCore接口�
 
 Ui线程第一次向WebCore线程发送的消息，并没有直接被分发到WebCore线程中去。而是被缓存在WebViewCore中的mMessages list中，因为有可能在WebKit的消息处理框架还未初始化完毕，Ui线程就已经开始向WebCore线程发送消息了。所以，当WebViewCore最后初始化完毕之后，会调用transferMessages()，在transferMessages中将mMessages中的消息通过mHandler全部send到WebCore线程中去。  
 
-到这里已经应该很明白了：
-Ui线程的消息通过WebViewClassic的mPrivateHandler处理。
-WebCore线程的消息通过EventHub的mHandler和WebViewCore的sWebCoreHandler处理。各个Handler之间可以相互send消息到对方的消息队列中去。
+到这里已经应该很明白了：   
+Ui线程的消息通过WebViewClassic的mPrivateHandler处理。WebCore线程的消息通过EventHub的mHandler和WebViewCore的sWebCoreHandler处理。各个Handler之间可以相互send消息到对方的消息队列中去。
 
 ### 版权申明
 转载文章请注明原文出处，任何用于商业目的，请联系谭海燕本人：hyman_tan@126.com

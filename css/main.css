@@ -189,3 +189,7 @@ float:left; /* 往左浮动 */
 .post pre.terminal code {
   background-color: #333;
 }
+
+.post {
+color: #494949
+}
