@@ -13,7 +13,7 @@
 html, body { height: 100%; }
 
 body {
-  background-color: #EEEEEE;
+  background-color: #1d1d1d;
   font-family: georgia, verdana, Arial, helvetica, sans-seriff;
   font-size: small;
   text-align: center;
@@ -25,9 +25,10 @@ h1, h2, h3, h4, h5, h6 {
 h1 { margin-bottom: 1em; }
 p { margin: 1em 0; }
 
-a         { color: #00a; }
+a         { color: #80bd01; }
+/*
 a:hover   { color: #000; }
-
+*/
 a{text-decoration: none;}
 /*****************************************************************************/
 /*
@@ -61,7 +62,7 @@ margin-right:40px;
 list-style:none; /* 将默认的列表符号去掉 */
 padding:0; /* 将默认的内边距去掉 */
 margin:0; /* 将默认的外边距去掉 */
-border-right:1px solid #DCDCDC;
+border-left:1px solid #6f6f6f;
 padding: 0 20px 0 20px;
 }
 
@@ -192,5 +193,5 @@ float:left; /* 往左浮动 */
 }
 
 .post {
-color: #494949
+color: #ccc
 }
