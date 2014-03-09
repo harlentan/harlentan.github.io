@@ -27,13 +27,18 @@ p { margin: 1em 0; }
 
 a         { color: #00a; }
 a:hover   { color: #000; }
-a:visited { color: #a0a; }
 
+a{text-decoration: none;}
 /*****************************************************************************/
 /*
 /* Home
 /*
 /*****************************************************************************/
+.header {height: 40px}
+.blog_title {
+float:left;
+margin-right:40px;
+}
 .posts {
   list-style-type: none;
   margin-bottom: 2em;
@@ -47,6 +52,29 @@ a:visited { color: #a0a; }
   color: #aaa;
   font-family: Monaco, "Courier New", monospace;
   font-size: 80%;
+}
+
+/******************************************************************************/
+/* For home page navigation bar
+/**/
+.nav_menu li {
+list-style:none; /* 将默认的列表符号去掉 */
+padding:0; /* 将默认的内边距去掉 */
+margin:0; /* 将默认的外边距去掉 */
+padding-right: 50px; 
+}
+
+.nav_menu li { 
+float:left; /* 往左浮动 */
+}
+
+.nav_menu li a {
+  text-align: center;
+  width: 100px;
+}
+
+.header_nav {
+  height: 30px
 }
 
 /*****************************************************************************/
@@ -63,11 +91,13 @@ a:visited { color: #a0a; }
   line-height: 1.5em;
 }
 
+/*
 .header a {
   font-weight: bold;
   text-decoration: none;
-}
+}*/
 
+/*
 .title {
   display: inline-block;
   margin-bottom: 2em;
@@ -79,8 +109,9 @@ a:visited { color: #a0a; }
 
 .title a:hover {
   color: #000;
-}
+}*/
 
+/*
 .header a.extra {
   color: #aaa;
   margin-left: 1em;
@@ -89,7 +120,7 @@ a:visited { color: #a0a; }
 .header a.extra:hover {
   color: #000;
 }
-
+*/
 .meta {
   color: #aaa;
 }
