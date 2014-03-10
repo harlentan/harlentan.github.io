@@ -14,7 +14,7 @@ html, body { height: 100%; }
 
 body {
   background-color: #303030;
-  font-family: georgia, verdana, Arial, helvetica, sans-seriff;
+  font-family: "Open Sans Light", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Calibri, sans-serif;
   font-size: small;
   text-align: center;
 }
@@ -193,5 +193,9 @@ float:left; /* 往左浮动 */
 }
 
 .post {
-color: #ccc
+color: #46483e;
+}
+
+.postbody {
+background-color:#fff;
 }
