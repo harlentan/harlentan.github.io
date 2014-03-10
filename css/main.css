@@ -15,8 +15,7 @@ html, body { height: 100%; }
 body {
   background-color: #303030;
   font-family: "Open Sans Light", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Calibri, sans-serif;
-  font-size: small;
-  text-align: center;
+  font-size: 14px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -35,6 +34,24 @@ a{text-decoration: none;}
 /* Home
 /*
 /*****************************************************************************/
+#page {
+background-position: center top;
+background-repeat: repeat-x;
+padding: 0 0 84px;
+position: relative
+}
+.wrap {
+margin: 0 auto;
+position: relative;
+-moz-transition: padding, width .5s ease-out;
+-ms-transition: padding, width .5s ease-out;
+-o-transition: padding, width .5s ease-out;
+-webkit-transition: padding, width .5s ease-out;
+transition: padding, width .5s ease-out;
+width: 1000px;
+word-break: break-all;
+}
+
 .header {height: 40px}
 .blog_title {
 float:left;
@@ -45,7 +62,7 @@ margin-right:40px;
   margin-bottom: 2em;
 }
 
-.posts li {
+/*.posts li {
   line-height: 1.75em;
 }
 
@@ -53,6 +70,29 @@ margin-right:40px;
   color: #aaa;
   font-family: Monaco, "Courier New", monospace;
   font-size: 80%;
+}
+*/
+
+.entry-block {
+  position: relative;
+  margin-bottom: 72px
+}
+
+.entry-posted {
+background-image: url("/res/images/bg-date-lt.png");
+background-repeat: no-repeat;
+width: 80px;
+height: 48px;
+float: left;
+margin: 4px 10px 0 0;
+padding: 0 10px 0 0;
+border-right: 1px solid #ddd;
+}
+.entry-posted span {
+  display: block;
+}
+
+.entry-title {
 }
 
 /******************************************************************************/
@@ -85,13 +125,13 @@ float:left; /* 往左浮动 */
 /*
 /*****************************************************************************/
 
-.site {
+/*.site {
   font-size: 115%;
   text-align: justify;
   width: 42em;
   margin: 3em auto 2em;
   line-height: 1.5em;
-}
+}*/
 
 /*
 .header a {
