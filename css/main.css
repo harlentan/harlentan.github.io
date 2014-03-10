@@ -10,6 +10,13 @@
   padding: 0;
 }
 
+div,form,img,ul,ol,li,dl,dt,dd {
+border:0;
+text-align:left;
+margin:0;
+padding:0;
+}
+
 html, body { height: 100%; }
 
 body {
@@ -49,6 +56,7 @@ position: relative;
 -webkit-transition: padding, width .5s ease-out;
 transition: padding, width .5s ease-out;
 width: 1000px;
+min-height: 300px;
 word-break: break-all;
 }
 
@@ -75,24 +83,26 @@ margin-right:40px;
 
 .entry-block {
   position: relative;
-  margin-bottom: 72px
+  margin-bottom: 50px
 }
 
 .entry-posted {
 background-image: url("/res/images/bg-date-lt.png");
 background-repeat: no-repeat;
-width: 80px;
-height: 48px;
+width: 60px;
+height: 73px;
 float: left;
 margin: 4px 10px 0 0;
-padding: 0 10px 0 0;
-border-right: 1px solid #ddd;
+padding: 6px 5px 16px;
 }
 .entry-posted span {
   display: block;
+  text-align: center;
 }
 
 .entry-title {
+  min-height: 55px;
+  padding-top: 26px;
 }
 
 /******************************************************************************/
