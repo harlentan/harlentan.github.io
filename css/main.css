@@ -28,7 +28,9 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-size: 100%; }
+  font-size: 100%; 
+  color: #480;
+}
 
 h1 { margin-bottom: 1em; }
 /*
@@ -161,13 +163,13 @@ width: 500px;
 /*
 /*****************************************************************************/
 
-/*.site {
-  font-size: 115%;
+.site {
+  font-size: 100%;
   text-align: justify;
   width: 42em;
   margin: 3em auto 2em;
   line-height: 1.5em;
-}*/
+}
 
 /*
 .header a {
@@ -270,8 +272,13 @@ width: 500px;
 
 .post {
 color: #46483e;
+word-break: break-word;;
 }
 
 .postbody {
 background-color:#fff;
+}
+
+.post p {
+padding: 8px 0;
 }
