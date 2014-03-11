@@ -140,6 +140,7 @@ float:left; /* 往左浮动 */
 position: relative;
 background: #303030;
 padding-top: 15px;
+width: 100%;
 }
 
 .header_nav ul {
