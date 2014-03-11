@@ -166,9 +166,9 @@ width: 500px;
 .site {
   font-size: 100%;
   text-align: justify;
-  width: 42em;
   margin: 3em auto 2em;
   line-height: 1.5em;
+  max-width: 960px;
 }
 
 /*
@@ -272,7 +272,9 @@ width: 500px;
 
 .post {
 color: #46483e;
-word-break: break-word;;
+word-break: break-word;
+line-height: 200%;
+font-size: 15px;
 }
 
 .postbody {
@@ -280,5 +282,5 @@ background-color:#fff;
 }
 
 .post p {
-padding: 8px 0;
+padding: 5px 0;
 }

@@ -42,5 +42,7 @@ Ui线程第一次向WebCore线程发送的消息，并没有直接被分发到We
 到这里已经应该很明白了：
 Ui线程的消息通过WebViewClassic的mPrivateHandler处理。WebCore线程的消息通过EventHub的mHandler和WebViewCore的sWebCoreHandler处理。各个Handler之间可以相互send消息到对方的消息队列中去。
 
+
+
 ### 版权申明
 转载文章请注明原文出处，任何用于商业目的，请联系谭海燕本人：hyman_tan@126.com
