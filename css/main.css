@@ -20,9 +20,11 @@ padding:0;
 html, body { height: 100%; }
 
 body {
-  background-color: #303030;
+  background-color: #1d1d1d;
+  color: #ccc;
   font-family: "Open Sans Light", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Calibri, sans-serif;
-  font-size: 14px;
+  font-size: 15px;
+  line-height: 200%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -45,7 +47,12 @@ a{text-decoration: none;}
 background-position: center top;
 background-repeat: repeat-x;
 padding: 0 0 84px;
-position: relative
+position: relative;
+}
+
+.content-wrap {
+background: #303030;
+height: 100%;
 }
 .wrap {
 margin: 0 auto;
@@ -55,7 +62,7 @@ position: relative;
 -o-transition: padding, width .5s ease-out;
 -webkit-transition: padding, width .5s ease-out;
 transition: padding, width .5s ease-out;
-width: 1000px;
+width: 750px;
 min-height: 300px;
 word-break: break-all;
 }
@@ -98,6 +105,7 @@ padding: 6px 5px 16px;
 .entry-posted span {
   display: block;
   text-align: center;
+  line-height: 100%
 }
 
 .entry-title {
@@ -126,9 +134,26 @@ float:left; /* 往左浮动 */
 }
 
 .header_nav {
-  height: 30px
+position: relative;
+background: #303030;
+padding-top: 15px;
 }
 
+.header_nav ul {
+width: 351px;
+margin: 0 auto;
+text-align: center;
+height: 40px;
+}
+
+.intro {
+text-align: left;
+padding-top: 50px;
+padding-bottom: 30px;
+padding-left: 230px;
+margin: 0 auto;
+width: 500px;
+}
 /*****************************************************************************/
 /*
 /* Site
