@@ -5,15 +5,19 @@ title: 谭海燕的技术圈
 {% for post in site.posts %}
 <div class="posts">
     <article class="entry-block">
-            <div class="entry-posted">
-                    <span class="posted-month">{{ post.date | date:"%b" }}</span>
-                    <span class="posted-date">{{ post.date | date:"%d" }}</span>
-                    <span class="posted-year">{{ post.date | date:"%Y" }}</span>
-            </div>
+
             <header class="entry-title">
-                <h2>
-                <a href="{{ post.url }}">{{ post.title }}</a>
-                </h2>
+                <div>
+
+                    <div class="entry-posted">
+                        <span class="posted-month">{{ post.date | date:"%b" }}</span>
+                        <span class="posted-date">{{ post.date | date:"%d" }}</span>
+                        <span class="posted-year">{{ post.date | date:"%Y" }}</span>
+                    </div>
+                    <h2 class="entry-title">
+                        <a href="{{ post.url }}">{{ post.title }}</a>
+                    </h2>
+                </div>
                 <div class="con">
                        <p>
                        {{ post.content  | | split:'<!--more-->' | first | strip_html }}
@@ -22,6 +26,5 @@ title: 谭海燕的技术圈
                  </div>
             </header>
     </article>
+    </div>
     {% endfor %}
-  </div>
-</div>

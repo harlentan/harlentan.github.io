@@ -31,8 +31,9 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 100%; }
 
 h1 { margin-bottom: 1em; }
+/*
 p { margin: 1em 0; }
-
+*/
 a         { color: #80bd01; }
 /*
 a:hover   { color: #000; }
@@ -74,7 +75,6 @@ margin-right:40px;
 }
 .posts {
   list-style-type: none;
-  margin-bottom: 2em;
 }
 
 /*.posts li {
@@ -90,26 +90,27 @@ margin-right:40px;
 
 .entry-block {
   position: relative;
-  margin-bottom: 50px
 }
 
 .entry-posted {
 background-image: url("/res/images/bg-date-lt.png");
 background-repeat: no-repeat;
 width: 60px;
-height: 73px;
+height: 50px;
 float: left;
 margin: 4px 10px 0 0;
-padding: 6px 5px 16px;
+padding: 15px 5px 16px;
 }
 .entry-posted span {
   display: block;
   text-align: center;
-  line-height: 100%
+  line-height: 100%;
+  color: #3c3c3c;
+  text-transform: uppercase;
 }
 
 .entry-title {
-  min-height: 55px;
+  min-height: 60px;
   padding-top: 26px;
 }
 
