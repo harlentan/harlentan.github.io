@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+<channel>
+  <title>ROR Sitemap for http://www.fenesky.com/</title>
+  <link>http://www.fenesky.com/</link>
+
+<item>
+     <link>http://www.fenesky.com/</link>
+     <title>Legend(谭海燕)的专栏</title>
+     <description>Legend(谭海燕)的专栏</description>
+     <ror:updatePeriod>weekly</ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.fenesky.com/blog/2014/03/12/how-shared-library-works/</link>
+     <title>动态库的工作原理详解</title>
+     <description>详细讲述了动态库的加载以及工作原理</description>
+     <ror:updatePeriod>weekly</ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.fenesky.com/blog/2014/03/08/blog-migration/</link>
+     <title>准备从CSDN博客搬家到这里</title>
+     <description>准备从CSDN博客搬家到这里</description>
+     <ror:updatePeriod>weekly</ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.fenesky.com/blog/2014/02/11/Android-WebKit-MsgHandle/</link>
+     <title>Android WebKit消息处理</title>
+     <description>Android WebKit消息处理</description>
+     <ror:updatePeriod>weekly</ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.fenesky.com/blog/2012/12/02/v8programming-preface/</link>
+     <title>Google V8编程详解（序）</title>
+     <description>V8编程详解</description>
+     <ror:updatePeriod>weekly</ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+</channel>
+</rss>
+  

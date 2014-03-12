@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://www.fenesky.com/</loc>
+  <lastmod>2014-03-12T15:19:56+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.fenesky.com/blog/2014/03/12/how-shared-library-works/</loc>
+  <lastmod>2014-03-12T15:19:56+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.fenesky.com/blog/2014/03/08/blog-migration/</loc>
+  <lastmod>2014-03-12T15:19:56+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.fenesky.com/blog/2014/02/11/Android-WebKit-MsgHandle/</loc>
+  <lastmod>2014-03-12T15:19:56+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.fenesky.com/blog/2012/12/02/v8programming-preface/</loc>
+  <lastmod>2014-03-12T15:19:56+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+</urlset>
