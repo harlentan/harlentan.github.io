@@ -2,4 +2,4 @@ author: Harlen.tan
 signiture: Legend(谭海燕)的专栏
 markdown: redcarpet
 pygments: true
-permalink: /blog/:year/:month/:day/:title
+permalink: /blog/:year/:month/:day/:title.html
