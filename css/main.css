@@ -20,13 +20,16 @@ padding:0;
 html, body { height: 100%; }
 
 body {
-  background-color: #1d1d1d;
   color: #ccc;
   font-family: "Open Sans Light", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Calibri, sans-serif;
   font-size: 15px;
   line-height: 200%;
   width: 100%;
   height: 100%;
+}
+
+#home-body {
+background-color: #1d1d1d;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -43,6 +46,12 @@ a         { color: #80bd01; }
 a:hover   { color: #000; }
 */
 a{text-decoration: none;}
+
+#content {
+float: left;
+padding: 0 20px 0 20px;
+margin-top: 25px;
+}
 /*****************************************************************************/
 /*
 /* Home
@@ -61,7 +70,7 @@ width: 100%;
 height: 100%;
 }
 
-.wrap {
+#wrap {
 margin: 0 auto;
 position: relative;
 -moz-transition: padding, width .5s ease-out;
@@ -140,10 +149,11 @@ padding:0; /* 将默认的内边距去掉 */
 margin:0; /* 将默认的外边距去掉 */
 border-left:1px solid #6f6f6f;
 padding: 0 20px 0 20px;
+float:left; /* 往左浮动 */
 }
 
-.nav_menu li { 
-float:left; /* 往左浮动 */
+.nav_menu li:first-child {
+  border-left:none;
 }
 
 .nav_menu li a {
@@ -158,7 +168,7 @@ padding-top: 15px;
 }
 
 .header_nav ul {
-width: 650px;
+width: 747px;
 margin: 0 auto;
 text-align: center;
 height: 40px;
