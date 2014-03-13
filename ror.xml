@@ -13,9 +13,9 @@
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>http://www.fenesky.com/blog/2014/03/12/how-shared-library-works.html</link>
-     <title>动态库的工作原理详解</title>
-     <description>详细讲述了动态库的加载以及工作原理</description>
+     <link>http://www.fenesky.com/pages/about.html</link>
+     <title>Legend(谭海燕)的专栏</title>
+     <description>关于谭海燕</description>
      <ror:updatePeriod>daily</ror:updatePeriod>
      <ror:sortOrder>1</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>
