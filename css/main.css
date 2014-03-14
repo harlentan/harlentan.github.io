@@ -258,10 +258,9 @@ width: 500px;
 .footer .rss img {
   border: 0;
 }*/
-.footer {
+#footer {
 width: 755px;
 margin: 0 auto;
-padding: 30px 0 50px 0;
 }
 .foot {
   text-align: center;
