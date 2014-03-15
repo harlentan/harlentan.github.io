@@ -285,7 +285,7 @@ margin: 0 auto;
 .post code {
   border: 1px solid #ddd;
   background-color: #eef;
-  padding: 0 .2em;
+  font-family: Consolas,Monaco,'Andale Mono',monospace;
 }
 
 .post pre code {
@@ -316,4 +316,8 @@ background-color:#fff;
 
 .post p {
 padding: 8px 0;
+}
+
+.highlight {
+  line-height: 100%;
 }
