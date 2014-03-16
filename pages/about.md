@@ -21,7 +21,7 @@ Something to do.
 + WebKit/Chromium
 + JavaScriptCore
 + Google V8
-+ 业余HTML5/JS
++ 业余HTML5/JS(WebKit工程师必备)
 
 
 ##Hobby
