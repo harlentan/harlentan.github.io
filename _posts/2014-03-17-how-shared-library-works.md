@@ -7,7 +7,7 @@ description: 详细讲述了动态库的加载以及工作原理
 category: C/C++
 comments: true
 ---
-关于动态库的原理和加载过程，网上也有很多版本，但是基本都在讲解动态库的编译以及使用，很少能够有文章对动态库的加载以及工作原理进行深入的剖析和讲解。说来也很惭愧，在过去的工作中，没能彻底的去弄清楚动态库的工作原理。直到最近工作中听到一些关于动态库加载以及工作原理的一些错误的理论，一方面为了推翻该理论，另一方面，正好借此机会彻底弄清楚动态库的工作原理。  
+关于动态库的原理和加载过程，网上也有很多版本，但是基本都在讲解动态库的编译以及使用，很少能够有文章对动态库的加载以及工作原理进行深入的剖析和讲解。说来也很惭愧，在过去的工作中，没能彻底的去弄清楚动态库的工作原理。直到最近工作中听到一些关于动态库加载以及工作原理的一些错误的理论，一方面为了推翻该理论，另一方面，正好借此机会彻底弄清楚动态库的工作原理。
 
 <!--more-->   
 ##问题
@@ -16,11 +16,12 @@ comments: true
 __问题背景__   
 Android里面，可以通过adb shell showmap pid来查看某个进程的内存咱用其概况，中里面就列出来某个进程中某个动态库内存消耗，很多地方都称之为动态库的内存分摊。例如查看Android浏览器内存占用，里面将会有里边libwebcore.so内存占用 大小。所有就会有人觉得，动态库占用内存总量是一定的， 那么分摊的进程越多，最后分摊到单个进程上的内存占用就变得小了。所以可以通过这种技巧来降低内存占用。   
 2. 如何优化动态库的内存占用？   
+如何优化动态库将在下一章节专门详细讲述。
 
 ##Demo代码
 下面的讲解会使用一个很简单的动态库以及使用动态库的程序来演示：    
 greet.h   
-{% highlight C linenos %}
+{% highlight C++ linenos %}
 // greet.h of libgreet.so
 #ifndef GREET_H
 #define GREET_H
@@ -33,7 +34,7 @@ extern void sayHi();
 #endif
 {% endhighlight %}  
 greet.c    
-{% highlight C linenos %}
+{% highlight C++ linenos %}
 // greet.c of libgreet.so
 #include "greet.h"
 
@@ -44,9 +45,22 @@ greet.c
 void sayHi() {
     printf("Hi I'am v1.0\n");
 }
+
+static void __attribute__ ((constructor)) \
+init_function(void)
+{
+    printf("Hello, Init Library!\n");
+}
+
+static void __attribute__((destructor)) \
+fini_function (void)
+{
+    printf("Hello, Destruct Library!\n");
+}
+
 {% endhighlight %}
 main.c
-{% highlight C linenos %}
+{% highlight C++ linenos %}
 #include "greet.h"
 
 #include <stdio.h>
@@ -82,42 +96,6 @@ ELF Header:
   Number of section headers:         30
   Section header string table index: 27
 
-Section Headers:
-  [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
-  [ 0]                   NULL            00000000 000000 000000 00      0   0  0
-  [ 1] .interp           PROGBITS        08048154 000154 000013 00   A  0   0  1
-  [ 2] .note.ABI-tag     NOTE            08048168 000168 000020 00   A  0   0  4
-  [ 3] .note.gnu.build-i NOTE            08048188 000188 000024 00   A  0   0  4
-  [ 4] .gnu.hash         GNU_HASH        080481ac 0001ac 00003c 04   A  5   0  4
-  [ 5] .dynsym           DYNSYM          080481e8 0001e8 0000b0 10   A  6   1  4
-  [ 6] .dynstr           STRTAB          08048298 000298 00008f 00   A  0   0  1
-  [ 7] .gnu.version      VERSYM          08048328 000328 000016 02   A  5   0  2
-  [ 8] .gnu.version_r    VERNEED         08048340 000340 000020 00   A  6   1  4
-  [ 9] .rel.dyn          REL             08048360 000360 000008 08   A  5   0  4
-  [10] .rel.plt          REL             08048368 000368 000018 08   A  5  12  4
-  [11] .init             PROGBITS        08048380 000380 00002e 00  AX  0   0  4
-  [12] .plt              PROGBITS        080483b0 0003b0 000040 04  AX  0   0 16
-  [13] .text             PROGBITS        080483f0 0003f0 00017c 00  AX  0   0 16
-  [14] .fini             PROGBITS        0804856c 00056c 00001a 00  AX  0   0  4
-  [15] .rodata           PROGBITS        08048588 000588 000008 00   A  0   0  4
-  [16] .eh_frame_hdr     PROGBITS        08048590 000590 000034 00   A  0   0  4
-  [17] .eh_frame         PROGBITS        080485c4 0005c4 0000c4 00   A  0   0  4
-  [18] .ctors            PROGBITS        08049f0c 000f0c 000008 00  WA  0   0  4
-  [19] .dtors            PROGBITS        08049f14 000f14 000008 00  WA  0   0  4
-  [20] .jcr              PROGBITS        08049f1c 000f1c 000004 00  WA  0   0  4
-  [21] .dynamic          DYNAMIC         08049f20 000f20 0000d0 08  WA  6   0  4
-  [22] .got              PROGBITS        08049ff0 000ff0 000004 04  WA  0   0  4
-  [23] .got.plt          PROGBITS        08049ff4 000ff4 000018 04  WA  0   0  4
-  [24] .data             PROGBITS        0804a00c 00100c 000008 00  WA  0   0  4
-  [25] .bss              NOBITS          0804a014 001014 000008 00  WA  0   0  4
-  [26] .comment          PROGBITS        00000000 001014 00002a 01  MS  0   0  1
-  [27] .shstrtab         STRTAB          00000000 00103e 0000fc 00      0   0  1
-  [28] .symtab           SYMTAB          00000000 0015ec 000410 10     29  45  4
-  [29] .strtab           STRTAB          00000000 0019fc 0001f0 00      0   0  1
-Key to Flags:
-  W (write), A (alloc), X (execute), M (merge), S (strings)
-  I (info), L (link order), G (group), T (TLS), E (exclude), x (unknown)
-  O (extra OS processing required) o (OS specific), p (processor specific)
 
 Program Headers:
   Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
@@ -131,18 +109,7 @@ Program Headers:
   GNU_EH_FRAME   0x000590 0x08048590 0x08048590 0x00034 0x00034 R   0x4
   GNU_STACK      0x000000 0x00000000 0x00000000 0x00000 0x00000 RW  0x4
   GNU_RELRO      0x000f0c 0x08049f0c 0x08049f0c 0x000f4 0x000f4 R   0x1
- 
- Section to Segment mapping:
-  Segment Sections...
-   00     
-   01     .interp 
-   02     .interp .note.ABI-tag .note.gnu.build-id .gnu.hash .dynsym .dynstr .gnu.version .gnu.version_r .rel.dyn .rel.plt .init .plt .text .fini .rodata .eh_frame_hdr .eh_frame 
-   03     .ctors .dtors .jcr .dynamic .got .got.plt .data .bss 
-   04     .dynamic 
-   05     .note.ABI-tag .note.gnu.build-id 
-   06     .eh_frame_hdr 
-   07     
-   08     .ctors .dtors .jcr .dynamic .got   
+  
 {% endhighlight %}
 对于一个exe应用程序启动过程中，通过系统调用exec族函数来替换掉当前进程的内容为要加载的应用程序，从而进入内核，内核需要找到程序执行的入口，那么这个入口是由Program Headers来提供的。此时，内核只知道进程的起始地址，是无法找到这个程序的执行入口的，这是，就需要ELF Header来辅助了。根据约定，ELF Header是被加载到offset为0的进程空间地址上， 也就是说ELF Header的地址是已知的，ELF Header中定义了Program Headers的偏移量。   
 {% highlight text %}   
@@ -153,5 +120,37 @@ Size of this header:               52 (bytes)
 {% endhighlight %}
 ELF Header的片段中，Start of program headers, Size of this header就可以定位Program Headers的地址。
 ##Dynamic Linker的加载
-http://www.smilax.org/135/dsohowto.pdf
-http://www.ibm.com/developerworks/library/l-shlibs/
+在Kernel找到程序的Program Header之后，就开始执行该程序的指令。我们可以看到：
+{% highlight text %}
+Program Headers:
+  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
+  PHDR           0x000034 0x08048034 0x08048034 0x00120 0x00120 R E 0x4
+  INTERP         0x000154 0x08048154 0x08048154 0x00013 0x00013 R   0x1
+      [Requesting program interpreter: /lib/ld-linux.so.2]
+{% endhighlight %}
+INIERP, 指定了程序的Dynamic Linker。 程序启动过程中，另外一个重要的工作就是启动Dynamic Linker。这个Dynamic Linker其实做了三件事情：   
+1. 加载程序所依赖的库
+2. 重新分配应用程序和依赖库的内存地址。
+3. 初始化应用程序    
+加载依赖的库，这一步比较简单。我们可以通过readelf -d 查看程序Dynamic Sections. 上面的Demo的Dynamic Sections如下：
+{% highlight text %}
+  Tag        Type                         Name/Value
+ 0x00000001 (NEEDED)                     Shared library: [libgreet.so]
+ 0x00000001 (NEEDED)                     Shared library: [libc.so.6]
+ 0x0000000c (INIT)                       0x8048380
+{% endhighlight %}
++ 加载依赖
+这里记录了程序所依赖的其他动态库，只需要递归的查找这个区的数据就可以获取所有依赖库的列表，然后挨个加载即可。
++ 重新分配地址
+重新分配地址，分为了两种情况：
+1. 基于相对地址的重分配
+实际上，程序内部的函数地址以及全局全局变量的地址在编译阶段就已经知道了。我这里说的地，指的是相对地址。当Dynamic Linker运行的时候，Linker是知道进程的起始地址的，所以对于相对地址的重分配而言，比较简单，只需要使用进程的地址+相对地址即可。
+2. 基于符号的地址重分配
+这一步是重新分配地址过程最复杂最耗时一部。在程序编译阶段，当遇到使用动态库中的变量和函数的，其实是不知道该变量和函数的地址的。这个时候，Linker就会查找符号然后放到PLT(Procedule Linkage Table)里面，这个表在程序运行过程中是不需要更改的，所以是Read-Only.这样，程序运行过程中，就可以知道需要使用的函数和变量地址了。当然，程序并不是直接查这个表的。而是通修改一个叫GOT(Global Offset Table).也就是说每次程序使用动态库里的函数和变量的时候，就会向GOT去取，这个操作在编译阶段就已经形成。在运行时，只需要改变GOT对应的地址即可。
+3. 初始化。
+注意看我的Demo greet.c中，定义了init_函数，这个函数就是在这个阶段被调用的。也就是说在程序加载动态库完成之后，在执行应用程序任何代码之前，会调用动态库的初始化函数。当然，我还定了动态库的析购函数， 是在整个应用程序结束之后卸载动态库的时候被调用的。
+  
+  
+##结束
+到此为止，我想大家应该对动态库的加载以及原理有了一些了解。我们在回过头来看看一开始我列出的问题：   
+可以通过fork的方式，来降低使用同一个动态库的单独进程的内存占用。我想通过上面的分析，答案应该是确定的：不能。因为即便是fork以及所谓的分摊，其实对于动态库的加载来说，应该说是按需分配，也就是上面讲的Dynamic Linker加载阶段，查找使用了哪些，然后放到PLT中。即便是fork出来的，Dynamic Linker需要重新加载，重新构建PLT。 除非不调用exec族函数替换进程内容。
