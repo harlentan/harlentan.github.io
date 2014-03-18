@@ -128,10 +128,12 @@ Program Headers:
   INTERP         0x000154 0x08048154 0x08048154 0x00013 0x00013 R   0x1
       [Requesting program interpreter: /lib/ld-linux.so.2]
 {% endhighlight %}
-INIERP, 指定了程序的Dynamic Linker。 程序启动过程中，另外一个重要的工作就是启动Dynamic Linker。这个Dynamic Linker其实做了三件事情：   
+INIERP, 指定了程序的Dynamic Linker。 程序启动过程中，另外一个重要的工作就是启动Dynamic Linker。这个Dynamic Linker其实做了三件事情:   
+
 1. 加载程序所依赖的库
 2. 重新分配应用程序和依赖库的内存地址。
 3. 初始化应用程序    
+
 加载依赖的库，这一步比较简单。我们可以通过readelf -d 查看程序Dynamic Sections. 上面的Demo的Dynamic Sections如下：
 {% highlight text %}
   Tag        Type                         Name/Value
