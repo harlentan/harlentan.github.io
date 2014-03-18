@@ -21,9 +21,33 @@
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
+     <link>http://www.fenesky.com/blog/2014/03/17/how-shared-library-works.html</link>
+     <title>动态库的工作原理详解</title>
+     <description>详细讲述了动态库的加载以及工作原理</description>
+     <ror:updatePeriod>daily</ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
      <link>http://www.fenesky.com/blog/2014/03/08/blog-migration.html</link>
      <title>准备从CSDN博客搬家到这里</title>
      <description>准备从CSDN博客搬家到这里</description>
+     <ror:updatePeriod>daily</ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.fenesky.com/blog/2014/03/02/AndroidWebKitMainResourceLoad.html</link>
+     <title>Android WebKit HTML主资源加载过程</title>
+     <description>Android WebKit HTML主资源加载过程, 详细讲解了Android WebKit HTML主资源加载的全过程</description>
+     <ror:updatePeriod>daily</ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.fenesky.com/blog/2014/02/16/AndroidWebKitTouchMessageHandle.html</link>
+     <title>Android WebKit消息处理(二)Touch事件的分发处理</title>
+     <description>Android WebKit消息处理(二)Touch事件的分发处理, 详细讲解了Android WebKit Touch事件的传递和处理</description>
      <ror:updatePeriod>daily</ror:updatePeriod>
      <ror:sortOrder>1</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>
