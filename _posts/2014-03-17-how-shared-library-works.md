@@ -3,7 +3,7 @@ layout: post
 title: Linux动态库的工作原理详解
 tags: [blog]
 keywords: Linux动态库的工作原理详解, SEO, 动态库，how shared libraries works，动态库加载, shared library, Android动态库
-description: 详细讲述了动态库的加载以及工作原理
+description: 详细讲述了Linux动态库的加载以及工作原理
 category: C/C++
 comments: true
 ---
