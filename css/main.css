@@ -321,3 +321,12 @@ padding: 8px 0;
 .highlight {
   line-height: 150%;
 }
+
+.highlight pre {
+  background-color:#394034;
+  color: white;
+}
+
+.highlight pre code {
+  background-color:#394034;
+}
