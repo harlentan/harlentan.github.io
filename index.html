@@ -4,7 +4,7 @@ keywords: seo, Legend(谭海燕)的专栏
 description: Legend(谭海燕)的专栏
 title: Legend(谭海燕)的专栏
 ---
-{% for post in site.posts %}
+{% for post in paginator.posts %}
 <div class="posts">
     <article class="entry-block">
 
@@ -28,4 +28,4 @@ title: Legend(谭海燕)的专栏
             </header>
     </article>
     </div>
-    {% endfor %}
+{% endfor %}

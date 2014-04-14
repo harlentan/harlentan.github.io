@@ -21,7 +21,21 @@
         </div>
         <div class="content-wrap">
             <div id="wrap">
+                <div>
+                    {% if paginator.previous_page  %}
+                    {% if paginator.previous_page > 1%}
+                    <a href="/page{{paginator.previous_page}}">←Previous</a>
+                    {% else %}
+                    {% endif %}
+                    <a href="/">←Previous</a>
+                    {% endif %}
+                </div>
             {{ content }}
+                <div>
+                    {% if paginator.next_page %}
+                    <a href="/page{{paginator.next_page}}">Next→</a>
+                    {% endif %}
+                </div>
             </div>
         </div>
         {% include footer.html %}
