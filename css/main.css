@@ -92,6 +92,20 @@ margin-right:40px;
   list-style-type: none;
 }
 
+.pagination {
+  padding-top: 20px;
+  height: 30px;
+  padding-bottom: 10px;
+}
+.pagination .pre {
+  line-height: 24px;
+  float: left;
+}
+
+.pagination .next {
+  line-height: 24px;
+  float: right;
+}
 /*.posts li {
   line-height: 1.75em;
 }
