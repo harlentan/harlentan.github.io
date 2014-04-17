@@ -2,7 +2,7 @@
 layout: post
 title: Android WebKit消息处理(二)Touch事件的分发处理
 tags: [blog]
-keywords: Android WebKit消息处理(二)Touch事件的分发处理, SEO, fenesky, android, WebKit，谭海燕
+keywords: Android WebKit消息处理(二)Touch事件的分发处理, fenesky, android, WebKit，谭海燕
 description: Android WebKit消息处理(二)Touch事件的分发处理, 详细讲解了Android WebKit Touch事件的传递和处理
 comments: true
 ---

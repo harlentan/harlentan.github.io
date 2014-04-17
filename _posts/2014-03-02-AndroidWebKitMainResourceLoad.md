@@ -2,7 +2,7 @@
 layout: post
 title: Android WebKit HTML主资源加载过程
 tags: [blog]
-keywords: Android WebKit HTML主资源加载过程, SEO, fenesky, android, WebKit，谭海燕, HTML主资源加载, HTML主资源
+keywords: Android WebKit HTML主资源加载过程, fenesky, android, WebKit，谭海燕, HTML主资源加载, HTML主资源
 description: Android WebKit HTML主资源加载过程, 详细讲解了Android WebKit HTML主资源加载的全过程
 comments: true
 ---

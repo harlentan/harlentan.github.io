@@ -2,7 +2,7 @@
 layout: post
 title: 准备从CSDN博客搬家到这里
 tags: [blog]
-keywords: CSDN 博客, 博客搬家, 准备从CSDN博客搬家到这里, SEO
+keywords: CSDN 博客, 博客搬家, 准备从CSDN博客搬家到这里
 description: 准备从CSDN博客搬家到这里
 comments: true
 ---

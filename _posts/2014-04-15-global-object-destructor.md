@@ -2,7 +2,7 @@
 layout: post
 title: C++如何禁止全局对象被析构
 tags: [blog]
-keywords: 全局对象析构, 禁止全局对象被析构
+keywords: 全局对象析构, 禁止全局对象被析构, 如何禁止全局对象被析构, C++全局对象
 description: C++如何禁止全局对象被析构
 comments: true
 ---

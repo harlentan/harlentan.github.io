@@ -2,7 +2,7 @@
 layout: post
 title: Android WebKit消息处理
 tags: [blog]
-keywords: WebKit, Android WebKit, WebView, WebKit 消息处理, WebKit消息分发, Android WebKit消息处理, seo
+keywords: WebKit, Android WebKit, WebView, WebKit 消息处理, WebKit消息分发, Android WebKit消息处理
 description: Android WebKit消息处理详细讲述了Android WebKit中WebView, WebViewClassic, WebViewCore, WebViewInputDispatcher中消息传递与处理
 alias: /2014/02/11/Android-WebKit-MsgHandle.html‎
 comments: true
