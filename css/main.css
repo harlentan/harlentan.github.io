@@ -48,7 +48,6 @@ a:hover   { color: #000; }
 a{text-decoration: none;}
 
 #content {
-float: left;
 padding: 0 20px 0 20px;
 margin-top: 25px;
 }
@@ -273,10 +272,12 @@ width: 500px;
   border: 0;
 }*/
 #footer {
-width: 755px;
 margin: 0 auto;
+background-color: #1d1d1d;
 }
 .foot {
+  margin: 0 auto;
+  width: 755px;
   text-align: center;
 }
 /*****************************************************************************/
