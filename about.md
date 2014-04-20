@@ -1,6 +1,5 @@
 ---
 layout: page
-permalink: /about/
 title: About me
 tags: [Jekyll, theme, simple, minimal, minimalism, responsive]
 modified: 2014-04-20

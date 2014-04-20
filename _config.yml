@@ -39,7 +39,7 @@ links:
   - title: 相册
     url: /Pictures
   - title: 关于
-    url: /about/
+    url: /about.html
     external: true
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
