@@ -1,7 +1,7 @@
 ---
 layout: post
 title: WebKit/WebCore中JavaScript在JavaScriptCore上的执行
-tags: [blog]
+tags: [JavaScriptCore, WebKit]
 keywords: WebKit/WebCore中JavaScript在JavaScriptCore上的执行, JavaScriptCore, WebKit/WebCore JS执行, WebKit/WebCore JavaScriptCore, WebKit运行JavaScript
 description: 详细讲解了JavaScript在WebKit/WebCore的JavaScriptCore上的执行流程和机制
 category: C/C++

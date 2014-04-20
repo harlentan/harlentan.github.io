@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JavaScriptCore编程之编译JavaScriptCore
-tags: [blog]
+tags: [JavaScriptCore]
 keywords: JavaScriptCore编程之编译JavaScriptCore, JavaScriptCore编程, 编译JavaScriptCore, Ubuntu 编译JavaScriptCore
 description: JavaScriptCore编程之编译JavaScriptCore 详细讲述了JavaScriptCore在Ubuntu下编译步骤
 comments: true
