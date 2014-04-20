@@ -198,7 +198,7 @@ ownerPage->chrome()->client()->needTouchEvents(false);
 会通过JNI调用WebViewCore的needTouchEvents()，从而就会导致上面所说的shouldSkipWebKIt(d)返回ture，是的事件不会被派遣到WebKit而直接被添加到UI的消息队列。这也就是为什么在网页在Load或者切换的过程中，前面一段时间，点击页面不会响应。当然，在Document初始化完毕之后，会调用needTouchEvents(true)告诉WebViewInputDispatcher ：Come on! I need your touch. 这样，Touch输入事件就被分别派遣到Ui消息队列和WebKit消息队列。   
     
 其实到这里，touch消息分拣已经很清晰简单了：   
-![Alt text](/res/images/ontouchevents.png)
+![Alt text](/images/ontouchevents.png)
 ##WebKit消息的处理
 {% highlight java linenos %}
 private final DispatchEventQueue mWebKitDispatchEventQueue = new DispatchEventQueue();  
@@ -295,7 +295,7 @@ private boolean mUiDispatchScheduled;
 {% endhighlight %} 
 同样，会进入一个for循环，不停的取事件然后处理。   
 篇幅有点长了，看到这里，可能还不是非常清楚，用下面这图概括下：  
-![Alt text](/res/images/webviewinputdispatcher.PNG)
+![Alt text](/images/webviewinputdispatcher.PNG)
 在所有的WebKit消息被处理的过程中，有些touch事件是需要给Ui进行反馈的，例如高亮，长按弹出菜单等等。具体这些事件会在后续文章中逐一进行解析的。
 
 

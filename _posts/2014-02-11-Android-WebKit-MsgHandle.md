@@ -17,21 +17,21 @@ comments: true
 整个WebKit主要分为2个线程，一个是Ui线程，也就是应用程序使用WebView所在的主线程，另一个WebCore线程。WebView的消息处理，主要是Ui线程和WebCore线程的交互。一部分Ui线程向WebCore发送的命令操作消息，例如LOAD_URL，另一部分是来自Ui的touch消息。
 
 主要涉及到的类如图所示：
-![Alt text](/res/images/webkitjava.jpg)
+![Alt text](/images/webkitjava.jpg)
 其中，WebViewClassic是WebView的Provider，或者说是delegate，凡是涉及到消息处理或者需要跟WebCore交互的接口，都是直接调用WebViewClassic的同名函数。
 WebViewInputDispatcher就是用来处理Ui的touch事件的。后面会专门讲解WebKit的touch事件传递以及处理流程的。本章就不展开讲解了。
 
 ### WebView的初始化
 
 时序图如下：
-![Alt text](/res/images/webkiteventsequens.png)
+![Alt text](/images/webkiteventsequens.png)
 上图其实就是WebView/WebKit的初始化流程，主要是对WebViewClassic, WebCore, WebViewInputDispatcher进行初始化，为WebKit资源请求前做准备。WebView构造函数中会调用createWebView，这个过程其实就是创建WebView的provider，实际返回的对象就是WebViewClassic，紧接着init初始化WebViewClassic，在WebViewClassic的init中会new WebViewCore()，之后对WebViewCore进行初始化，在WebViewCore自己初始化完毕之后，表明现在WebCore已经可以处理来自WebView的消息了，包括touch事件，此时WebViewCore会发送消息给WebViewClassic，也就是上图中看到的WEBCORE\_INITIALIZED\_MSG_ID，WebViewClassic收到此消息之后，就会初始化touch事件的分发器：WebViewInputDispatcher。这个流程结束之后，应用就可以通过WebView，loadUrl了。
 
 从这个图中，我们看到，在WebCore的构造函数中会new WebCoreThread，这个线程就是上面提到的WebCore线程。到此为止，我们已经可以看到有2个线程了，一个是WebView所在的Ui线程，另一个就是WebCore线程。
 
 那么WebKit的消息处理究竟怎么工作的呢？
 在WebView中，消息在线程间的分发使用的是Handler。在WebKit的消息分发机制中的总共有三个Handler如下：
-![Alt text](/res/images/webkithandlers.jpg)
+![Alt text](/images/webkithandlers.jpg)
 #### mPrivateHandler：
 在WebViewClassic中创建，用来分发和处理UI相关消息，例如重绘，touch事件，另外就是负责跟WebCore线程交互。
 #### sWebCoreHandler：

@@ -45,5 +45,5 @@ JavaScriptCore的Heap是由VM管理的。也就是说，所有的HTML的JavaScri
 其实对于JavaScript的执行流程相对于前面讲到，比较简单那。script标签的async和defer决定了JavaScript的执行时机，在HTML文档解析的过程中，遇到script的async和defer，豆浆推迟JavaScript的加载时机。如果什么都不加，默认是阻塞执行，也就是解析HTML的过程中，遇到script标签，会停止HTML的解析，直到JavaScript被执行完。一开始不是很理解，作为一款非常优秀的排版渲染器来说，怎么会允许JavaScript阻塞页面的显示呢？后来查看W3C中关于HTML解析过程的解释是，JavaScript执行过程中，有可能会对DOM节点进行操作，这些操作将会导致DOM树重建，消耗比较大，所以要将这种影响减低到最小，也就是执行JavaScript的时候，停止解析HTML。JavaScript脚本最终会被传给ScriptController，然后交给JSMainThreadExecState， JSMainThreadExecState才是真正最终去执行JavaScript的地方。
 
 ##WebCore中JavaScript相关的主要类图
-![Alt text](/res/images/webkit_jsc.PNG)   
+![Alt text](/images/webkit_jsc.PNG)   
 从上图可以看到，当有需要执行一段JavaScript的时候，只需要找打对应的Frame，script()->evaluate()来执行JavaScript。evaluate的过程中，需要一个windowShell，也就是通过windowShell()来获取，如果没有，就需要创建一个JSDOMWindowShell, 在JSDOMWindowShell创建好之后，setWindow来创建JSDOMWindow，也就是window对象。evaluate最终执行JavaScript并不是由ScriptController直接操作的，而是转交给JSMainThreadExecState来执行的。
