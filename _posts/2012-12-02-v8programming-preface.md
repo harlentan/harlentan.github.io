@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Google V8编程详解（序）
-tags: [blog]
+tags: [Google V8]
 keywords: V8编程, Google V8, V8编程详解, Google V8编程详解, CloudApp, HTML5
 description: V8编程详解
 comments: true
