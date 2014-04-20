@@ -35,15 +35,15 @@ links:
   - title: 主页
     url: /
   - title: 博客
-    url: /articles/
+    url: /blog.html
   - title: 相册
-    url: /Pictures
+    url: /gallery.html
   - title: 关于
     url: /about.html
     external: true
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
+timezone:    Asia/Shanghai
 future:      true
 pygments:    true
 markdown:    kramdown
@@ -67,3 +67,10 @@ kramdown:
 
 include: [".htaccess"]
 exclude: ["lib", "config.rb", "Gemfile", "Capfile", "Gemfile.lock", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+
+gallerytag:
+    dir: images/galleries
+    url: images/galleries
+    thumb_width: 250
+    thumb_height: 250
+    columns: 5
