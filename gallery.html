@@ -56,28 +56,29 @@
 <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.fenesky.com/images/apple-touch-icon-144x144-precomposed.png">
 
-<!-- 加载 jQuery 库（必须） -->
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="/assets/fancybox/source/jquery-1.10.1.min.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="/assets/fancybox/source/jquery.mousewheel-3.0.6.pack.js"></script>
 
-<!-- 引入 fancyBox 核心文件（必须）-->
-<link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-<script type="text/javascript" src="/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="/assets/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="/assets/fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen" />
 
-<!-- 引入 mousewheel 插件（可选，如果想通过鼠标滚轮控制图片播放则必须） -->
-<script type="text/javascript" src="/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="/assets/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="/assets/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
 
-<!-- 根据需要引入浏览工具：按钮式，缩略图式和/或多媒体工具（可选，详见下方“官方演示”中的“浏览工具”部分） -->
-<!-- 按钮式需要引入以下2个文件 -->
-<link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
-<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="/assets/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="/assets/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
 
-<!-- 缩略图式需要引入以下2个文件 -->
-<link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
-<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
-
-<!-- 多媒体工具需要引入以下文件 -->
-<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
-
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="/assets/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".gallery-link").fancybox();
+	});
+</script>
 </head>
 
 <body id="page">
@@ -249,52 +250,6 @@
 
   </footer>
 </div><!-- /.footer-wrapper -->
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="http://www.fenesky.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-<script src="http://www.fenesky.com/assets/js/scripts.min.js"></script>
-
-<!-- Jekyll Simple Search option -->
-<script>
-  $(document).ready(function() {
-      $('.search-field').simpleJekyllSearch({
-          jsonFile : 'http://www.fenesky.com/search.json',
-          searchResults : '.search-results',
-          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
-          noResults: '<p>Nothing found.</p>'
-        });
-  });
-
-  (function( $, window, undefined ) {
-    
-     var bs = {
-          close: $(".icon-remove-sign"),
-          searchform: $(".search-form"),
-          canvas: $("body"),
-          dothis: $('.dosearch')
-      };
-    
-    bs.dothis.on('click', function() {
-      $('.search-wrapper').css({ display: "block" });
-      bs.searchform.toggleClass('active');
-      bs.searchform.find('input').focus();
-      bs.canvas.toggleClass('search-overlay');
-    });
-    
-      bs.close.on('click', function() {
-        $('.search-wrapper').removeAttr( 'style' );
-        bs.searchform.toggleClass('active');
-        bs.canvas.removeClass('search-overlay');
-    });
-  })( jQuery, window );
-</script>
-
-$(document).ready(function() {
-	$(".gallery-link").fancybox({
-		openEffect	: 'none',
-		closeEffect	: 'none'
-	});
-});
 
 </body>
 </html>
