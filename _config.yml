@@ -69,8 +69,8 @@ include: [".htaccess"]
 exclude: ["lib", "config.rb", "Gemfile", "Capfile", "Gemfile.lock", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
 
 gallerytag:
-    dir: images/galleries
-    url: images/galleries
+    dir: images/gallery
+    url: images/gallery
     thumb_width: 250
     thumb_height: 250
     columns: 5
