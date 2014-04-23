@@ -41,6 +41,7 @@
       </footer>
       <div class="entry-content">
         {{ content }}
+        {% include post_copyright.html %}
 	<nav class="pagination" role="navigation">
         {% if page.previous %}
         <a href="{{ site.url }}{{ page.previous.url }}" class="btn" title="{{ page.previous.title }}">上一篇</a>
