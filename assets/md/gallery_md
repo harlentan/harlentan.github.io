@@ -1,8 +1,8 @@
-//---
+---
 layout: page
 title: Gallery
 modified: 2014-04-20
-//---
+---
 {% gallery galleryname %}
 01.jpg
 02.jpg
