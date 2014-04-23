@@ -128,19 +128,18 @@
 </div><!-- ./search-wrapper -->
 
 <header class="masthead">
-	<div class="wrap">
-        
-    		<a href="http://www.fenesky.com/" class="site-logo" rel="home" title="Legend(谭海燕)的专栏"><img src="http://www.fenesky.com/images/site-logo.png" width="200" height="200" alt="Legend(谭海燕)的专栏 logo" class="animated fadeInUp"></a>
-        
-        <h1 class="site-title animated fadeIn"><a href="http://www.fenesky.com/">Legend(谭海燕)的专栏</a></h1>
-		<h2 class="site-description animated fadeIn" itemprop="description">Happy, Share</h2>
-	</div>
+	
+		<div class="wrap">
+			<a href="http://www.fenesky.com/" class="site-logo" rel="home" title="Legend(谭海燕)的专栏"><img src="http://www.fenesky.com/images/site-logo.png" width="200" height="200" alt="Legend(谭海燕)的专栏 logo" class="animated bounceInDown"></a>
+		</div>
+	
 </header><!-- /.masthead -->
+
 
 
 <div id="main" role="main">
   <article class="entry">
-    
+    <img src="http://www.fenesky.com/images/so-simple-sample-image-4.jpg" class="entry-feature-image" alt="Gallery" >
     <div class="entry-wrapper">
       <header class="entry-header">
         <h1 class="entry-title">Gallery</h1>
@@ -211,7 +210,7 @@
 </dt>
 <dd class="gallery-caption"></dd></dl>
 
-<br style="clear: both;" /><br style="clear: both;" />
+<br style="clear: both;" />
 
 </div>
 
@@ -260,21 +259,21 @@
   });
 
   (function( $, window, undefined ) {
-
+    
      var bs = {
           close: $(".icon-remove-sign"),
           searchform: $(".search-form"),
           canvas: $("body"),
           dothis: $('.dosearch')
       };
-
+    
     bs.dothis.on('click', function() {
       $('.search-wrapper').css({ display: "block" });
       bs.searchform.toggleClass('active');
       bs.searchform.find('input').focus();
       bs.canvas.toggleClass('search-overlay');
     });
-
+    
       bs.close.on('click', function() {
         $('.search-wrapper').removeAttr( 'style' );
         bs.searchform.toggleClass('active');
@@ -284,7 +283,7 @@
 </script>
 
 
-
+          
 
 </body>
 </html>
