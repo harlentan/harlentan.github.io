@@ -16,7 +16,7 @@ Most good programmers do programming not because they expect to get paid or get 
 Someone to love. Something to hope. Something to do.   
 
 ##Career    
-软件攻城师一枚。曾就职于搜狐，阿里巴巴。   
+软件攻城师一枚。曾就职于搜狐，现就职于阿里巴巴。   
 
 ##Technology
 * C++
