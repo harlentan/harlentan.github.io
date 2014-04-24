@@ -18,8 +18,8 @@ var number = new Number(3.141592653589793);
 number.hello = 'Hi';
 console.log(number.toFixed(2));
 {% endhighlight %}
-JavaScriptCore首先会使用Lexer对这段代码进行解析，这里最明显的token有：new, Number, .操作符, hello, toFixed。可分为二类
-*  基础操作符：new, \.操作符      
+JavaScriptCore首先会使用Lexer对这段代码进行解析，这里最明显的token有：new, Number, .操作符, hello, toFixed。可分为二类:
+*  基础操作符：new, .操作符
 *  属性：hello, toFixed    
 JavaScriptCore为实现基础操作符，实现了一系列的OPCODE，主要定义在JavaScriptCore/bytecode/Opcode.h中，本文中讲到的OPCODE如下：
 {% highlight C++ linenos %}
