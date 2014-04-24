@@ -3533,7 +3533,7 @@ body {
 .entry-tags {
   display: block;
   margin-top: 2em;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-size: 16px;
   font-size: 1rem;
   font-weight: 600;
