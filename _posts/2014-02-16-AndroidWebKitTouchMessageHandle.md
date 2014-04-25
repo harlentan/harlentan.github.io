@@ -126,7 +126,9 @@ public boolean onTouchEvent(MotionEvent ev) {
 }    
 {% endhighlight %} 
 这是Android WebKit的所有touch输入事件的入口。touch事件通过postPointerEvent进入，然后对UI事件和WebKit事件进行分拣，派遣到对应的消息队列。  
+
 ##Ui事件和WebKit事件的分拣
+
 &emsp;&emsp;在消息分拣过程中，会判断touch输入事件是否真的需要派发给WebKit.
 {% highlight java linenos %}
 private void enqueueEventLocked(DispatchEvent d) {  
@@ -161,7 +163,7 @@ private void enqueueEventLocked(DispatchEvent d) {
      return true;  
  } 
  {% endhighlight %}
-通常情况下，几乎所有的touch事件都需要派发给WebKit，除非WebKit不需要：
+&emsp;&emsp;通常情况下，几乎所有的touch事件都需要派发给WebKit，除非WebKit不需要：
 在Document初始化过程中。
 在FrameLoader stopLoad之后。
 Document被析构。
@@ -199,7 +201,9 @@ ownerPage->chrome()->client()->needTouchEvents(false);
     
 其实到这里，touch消息分拣已经很清晰简单了：   
 ![Alt text](/images/ontouchevents.png)
+
 ##WebKit消息的处理
+
 {% highlight java linenos %}
 private final DispatchEventQueue mWebKitDispatchEventQueue = new DispatchEventQueue();  
 private final TouchStream mWebKitTouchStream = new TouchStream();  
@@ -249,7 +253,9 @@ private void dispatchWebKitEvents(boolean calledFromHandler) {
      // ...  
 {% endhighlight %}  
 内部逻辑其实就是一个for循环，不停的取消息，然后根据当前的状态然后处理。   
+
 ##UI消息的处理：
+
 {% highlight java linenos %}
 // UI state, tracks events observed by the UI.  (guarded by mLock)  
 private final DispatchEventQueue mUiDispatchEventQueue = new DispatchEventQueue();  
