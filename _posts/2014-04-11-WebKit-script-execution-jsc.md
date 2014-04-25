@@ -18,10 +18,12 @@ comments: true
 ##Global对象   
 &emsp;&emsp;在JavaScriptCore中，任何全局的属性和方法都被挂在JSGlobalObject上，例如Number, Boolean, Array。在WebCore里面，JavaScript执行环境的Global Object就是window对象，也就是JSDOMWindow。这部分代码我们可以在WebKit/Source/Webcore/Bindings下面找到，JSDOMWindow.h, JSDOMWindow.cpp文件时动态生成的文件。这也就是为什么window对象上挂在的属性和方法可以直接使用而不必通过window.xxx的方式调用的原因。对于任何HTML页面，只要有window对象，就可以执行JavaScript。   
 
-##JavaScript执行环境  
+##JavaScript执行环境    
+
 &emsp;&emsp;在WebCore中，JavaScript执行环境其实是以Frame为基本单位的。Frame将JavaScript执行的控制权交给了ScriptController(对应ScriptController.cpp)来处理。window对象就是ScriptController通过JSDOMWindodwShell创建出来的。每一个Frame都会有唯一的一个ScriptController，一个ScriptController通常情况下只管理一个windowShell(JSDOMWindow)对象，windowShell从命名上就可以看出，只是window对象的封装而已。ScriptController也会有对应多个windowShell的情况，例如再有Plugin的时候，也会给Plugin创建一个windowShell对象，并交给ScriptController管理。window之间相隔离，也就是说在一个window对象的内部无法访问另一个window对象的方法和属性。当需要执行一段JavaScript的时候，WebCore其实即使将该段JavaScript交给对应的JSGlobalObject去evaluate()，这里的JSGlobalObject也就是前面提到的window对象。  
 
 ##HTML内部的JavaScript对象内存管理    
+
 &emsp;&emsp;我之前一直有一个误区，误认为只要浏览器的HTML页面被关闭，或者通过刷新或者重定向或者同一个tab里面加载另一个HTML页面，那么无论如何之前显示的HTML内部的JavaScript对象所占用的内存就应该被GC掉并回收了。最近在跟踪一个奇怪的问题，当前页面都已经被刷新或者加载其他HTML了，上一个HTML页面内的JavaScript对象占用的内存竟然没有被释放。后来通过查看代码才发现，WebCore中，使用的是JavaScriptCore的一个全局VM对象，改VM对象永远不会被析构，就算进程结束了，也不会调用改VM对象的析构函数。WebCore的VM对象定义如下：
 {% highlight C++ %}
 // JSDOMWindodwBase.cpp
