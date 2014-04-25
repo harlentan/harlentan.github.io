@@ -6,7 +6,7 @@ keywords: Android WebKit消息处理(二)Touch事件的分发处理, fenesky, an
 description: Android WebKit消息处理(二)Touch事件的分发处理, 详细讲解了Android WebKit Touch事件的传递和处理
 comments: true
 ---
-上一章[《Android WebKit消息处理》](http://www.fenesky.com/blog/2014/02/11/Android-WebKit-MsgHandle.html)讲到了Android WebKit主体初始化流程以及消息处理框架的搭建。这一章主要讲讲Android WebKit touch事件的处理与分发。
+&emsp;&emsp;上一章[《Android WebKit消息处理》](http://www.fenesky.com/blog/2014/02/11/Android-WebKit-MsgHandle.html)讲到了Android WebKit主体初始化流程以及消息处理框架的搭建。这一章主要讲讲Android WebKit touch事件的处理与分发。
 
 <!--more-->
 
@@ -81,7 +81,7 @@ public WebViewInputDispatcher(UiCallbacks uiCallbacks, WebKitCallbacks webKitCal
 + uiCallbacks: WebViewClassic的mPrivateHandler   
 + webKitCallbacks: WebViewCore的mEventHub   
 
-WebViewInputDispatcher把touch输入事件分为Ui事件和WebKit事件（就是上面WebCore事件），更具WebViewClassic在创建WebViewInputDispatcher的时候传入的参数，会分别创建自己的mUiHandler和mWebKitHandler。同时保存mUiCallbacks和mWebKitCallbacks以便于分别向WebViewClassic和WebViewCore发送消息：
+&emsp;&emsp;WebViewInputDispatcher把touch输入事件分为Ui事件和WebKit事件（就是上面WebCore事件），更具WebViewClassic在创建WebViewInputDispatcher的时候传入的参数，会分别创建自己的mUiHandler和mWebKitHandler。同时保存mUiCallbacks和mWebKitCallbacks以便于分别向WebViewClassic和WebViewCore发送消息：
 {% highlight java linenos %}
 public WebViewInputDispatcher(UiCallbacks uiCallbacks, WebKitCallbacks webKitCallbacks) {  
     this.mUiCallbacks = uiCallbacks;  
@@ -127,7 +127,7 @@ public boolean onTouchEvent(MotionEvent ev) {
 {% endhighlight %} 
 这是Android WebKit的所有touch输入事件的入口。touch事件通过postPointerEvent进入，然后对UI事件和WebKit事件进行分拣，派遣到对应的消息队列。  
 ##Ui事件和WebKit事件的分拣
-在消息分拣过程中，会判断touch输入事件是否真的需要派发给WebKit.
+&emsp;&emsp;在消息分拣过程中，会判断touch输入事件是否真的需要派发给WebKit.
 {% highlight java linenos %}
 private void enqueueEventLocked(DispatchEvent d) {  
      if (!shouldSkipWebKit(d)) {  

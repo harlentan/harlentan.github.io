@@ -8,7 +8,7 @@ comments: true
 ---
 
 ##前言
-在浏览器里面输入网址，最终浏览器会调用WebView的loadUrl()，然后就开始加载整个网页。整个加载过程中，最重要的一步就是HTML主资源的加载。WebKit将网页的资源分为主资源(MainResource)和子资源(SubResource)。   
+&emsp;&emsp;在浏览器里面输入网址，最终浏览器会调用WebView的loadUrl()，然后就开始加载整个网页。整个加载过程中，最重要的一步就是HTML主资源的加载。WebKit将网页的资源分为主资源(MainResource)和子资源(SubResource)。   
 
 <!--more-->   
 
@@ -24,7 +24,7 @@ comments: true
 
 ##主资源请求   
 ###LoadUrl
-主资源的请求是从WebView的loadUrl开始的。根据之前[《Android WebKit消息处理》](http://www.fenesky.com/blog/2014/02/11/Android-WebKit-MsgHandle.html)的讲解，WebView的操作都会有WebViewClassic进行代理。资源加载肯定是由WebCore来处理的，所以，WebVewClassic会发消息给WebViewCore，让WebViewCore最终将loadUrl传递给C++层的WebKit处理：   
+&emsp;&emsp;主资源的请求是从WebView的loadUrl开始的。根据之前[《Android WebKit消息处理》](http://www.fenesky.com/blog/2014/02/11/Android-WebKit-MsgHandle.html)的讲解，WebView的操作都会有WebViewClassic进行代理。资源加载肯定是由WebCore来处理的，所以，WebVewClassic会发消息给WebViewCore，让WebViewCore最终将loadUrl传递给C++层的WebKit处理：   
 {% highlight java linenos %}
 /** 
  * See {@link WebView#loadUrl(String, Map)} 
@@ -43,7 +43,7 @@ private void loadUrlImpl(String url, Map<String, String> extraHeaders) {
     clearHelpers();  
 } 
 {% endhighlight %}
-WebViewCore在接收到LOAD_URL之后，会通过BrowserFrame调用nativeLoadUrl，这个BrowserFrame与C++层的mainFrame对接。这里顺便提一下clearHeapers()的作用：如果当前网页有对话框dialog，有输入法之类的，clearHelpers就是用来清理这些东西的。这也是为什么加载一个新页面的时候，但当前页面的输入法以及dialog消失等等。WebViewCore收到消息之后，会直接让BrowserFrame调用JNI:  nativeLoadUrl():
+&emsp;&emsp;WebViewCore在接收到LOAD_URL之后，会通过BrowserFrame调用nativeLoadUrl，这个BrowserFrame与C++层的mainFrame对接。这里顺便提一下clearHeapers()的作用：如果当前网页有对话框dialog，有输入法之类的，clearHelpers就是用来清理这些东西的。这也是为什么加载一个新页面的时候，但当前页面的输入法以及dialog消失等等。WebViewCore收到消息之后，会直接让BrowserFrame调用JNI:  nativeLoadUrl():
 {% highlight java linenos %}
 // BrowserFrame.java  
     public void loadUrl(String url, Map<String, String> extraHeaders) {  
@@ -106,7 +106,7 @@ static void LoadUrl(JNIEnv *env, jobject obj, jstring url, jobject headers)
     pFrame->loader()->load(request, false);  
 }
 {% endhighlight %}
-接下来，在JNI的LoadUrl中就开始创建ResourceRequest，由于WebView的java层面可以对url的请求头进行设定，然后通过FrameLoader进行加载。这里的pFrame就是与Java层的BrowserFrame对应的mainFrame。HTML在WebKit的层次上看，最低层的是Frame，然后才有Document，也就意味着HTML Document也是通过Frame的FrameLoader加载的：
+&emsp;&emsp;接下来，在JNI的LoadUrl中就开始创建ResourceRequest，由于WebView的java层面可以对url的请求头进行设定，然后通过FrameLoader进行加载。这里的pFrame就是与Java层的BrowserFrame对应的mainFrame。HTML在WebKit的层次上看，最低层的是Frame，然后才有Document，也就意味着HTML Document也是通过Frame的FrameLoader加载的：
 pFrame->loader()->load(request, false);  
 调用栈
 最后的这句话就是让FrameLoader去加载url的request。后面的调用栈依次是：
