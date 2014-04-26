@@ -32,11 +32,17 @@ WebViewInputDispatcher就是用来处理Ui的touch事件的。后面会专门讲
 &emsp;&emsp;那么WebKit的消息处理究竟怎么工作的呢？
 在WebView中，消息在线程间的分发使用的是Handler。在WebKit的消息分发机制中的总共有三个Handler如下：
 ![Alt text](/images/webkithandlers.jpg)
+
 #### mPrivateHandler：
+
 在WebViewClassic中创建，用来分发和处理UI相关消息，例如重绘，touch事件，另外就是负责跟WebCore线程交互。
+
 #### sWebCoreHandler：
+
 在WebCoreThread中间，主要负责WebViewCore初始化、WebViewCoreWatchDog心跳、WebCore线程优先级别调整。
+
 #### mHandler：
+
 &emsp;&emsp;WebCore线程消息循环最主要的handler。任何需要调用WebCore接口的，都需要通过mHandler  send到WebCore线程中去。
 在EventHub的transferMessages()中被new出来的，由于transferMessages()实在WebViweCore的initialize()中被调用的，所以，EventHub的mHandler也是在WebCore线程中。
 
