@@ -43,7 +43,7 @@ WebViewInputDispatcher就是用来处理Ui的touch事件的。后面会专门讲
 
 #### mHandler：
 
-&emsp;&emsp;WebCore线程消息循环最主要的handler。任何需要调用WebCore接口的，都需要通过mHandler  send到WebCore线程中去。
+WebCore线程消息循环最主要的handler。任何需要调用WebCore接口的，都需要通过mHandler  send到WebCore线程中去。
 在EventHub的transferMessages()中被new出来的，由于transferMessages()实在WebViweCore的initialize()中被调用的，所以，EventHub的mHandler也是在WebCore线程中。
 
 &emsp;&emsp;Ui线程第一次向WebCore线程发送的消息，并没有直接被分发到WebCore线程中去。而是被缓存在WebViewCore中的mMessages list中，因为有可能在WebKit的消息处理框架还未初始化完毕，Ui线程就已经开始向WebCore线程发送消息了。所以，当WebViewCore最后初始化完毕之后，会调用transferMessages()，在transferMessages中将mMessages中的消息通过mHandler全部send到WebCore线程中去。
