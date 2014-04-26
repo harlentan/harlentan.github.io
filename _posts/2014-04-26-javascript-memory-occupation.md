@@ -2,8 +2,8 @@
 layout: post
 title: JavaScriptCore非Heap内存的管理
 tags: [JavaScriptCore]
-keywords: JavaScriptCore内存占用不释放, 深入浅出JavaScriptCore, JavaScriptCore内存泄露
-description: 结合JavaScriptCore源码分析讲解如何快速降低JavaScriptCore的内存占用。
+keywords: JavaScriptCore内存占用不释放, 深入浅出JavaScriptCore, JavaScriptCore内存泄露,JavaScriptCore内存管理
+description: 结合JavaScriptCore源码分析讲解JavaScriptCore非Heap内存的管理以及如何快速降低JavaScriptCore的内存占用。
 category: C/C++, JavaScriptCore
 comments: true
 ---
