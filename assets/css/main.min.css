@@ -242,8 +242,8 @@ a {
   transition: all 0.2s ease;
 }
 body {
-  font-family: "verdana","ms song","Arial","Helvetica", "sans-serif";
-  color: #222222;
+  font-family: 'Open Sans',sans-serif;
+  color: #4d4e53;
 }
 h1,
 h2,
@@ -251,7 +251,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "verdana","ms song","Arial","Helvetica", "sans-serif";
+  font-family: 'Open Sans',sans-serif;
 }
 a {
   text-decoration: none;
