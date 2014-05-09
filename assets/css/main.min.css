@@ -3257,7 +3257,7 @@ body {
 }
 @media only screen and (min-width: 48em) {
   body {
-    line-height: 1.6;
+    line-height: 24px;
   }
 }
 .navigation-wrapper {
