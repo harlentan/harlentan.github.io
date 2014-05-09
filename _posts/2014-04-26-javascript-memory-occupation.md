@@ -44,4 +44,4 @@ static void destroy(JSCell*);
 {% endhighlight %}       
 如果希望JavaScriptCore在将要析构对象的时候通知你，需要在自己的类中定义和实现上面的语句。JavaScriptCore在Sweep对象的时候，会判断`needsDescription`的值，如果是true，就会调用该对象的destroy函数，这样，我们就可以在destroy实现中显示的调用类的析构函数。`needsDescription`在JSCell中被定义为false。所以继承者需要根据自己的需求来重新定义。       
 
-&emsp;&emsp;目前的JavaScriptCore的实现除了依赖于WTF意外，还高度依赖于WebKit的消息循环机制。GC的过程红，其实是fire一个timer，让WebKit的消息循环来调度GC。如果想要把JavaScriptCore从WebKit中独立出来使用，还需要实现和部分GC fire的代码。否则，你会很GC无效，内存暴涨。
+&emsp;&emsp;目前的JavaScriptCore的实现除了依赖于WTF意外，还高度依赖于WebKit的消息循环机制。GC的过程红，其实是fire一个timer，让WebKit的消息循环来调度GC。如果想要把JavaScriptCore从WebKit中独立出来使用，还需要实现和部分GC fire的代码。否则，你会发现GC不工作，内存暴涨。
