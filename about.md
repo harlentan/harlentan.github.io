@@ -26,4 +26,6 @@ Someone to love. Something to hope. Something to do.
 * 业余HTML5/JS(WebKit工程师必备)
 
 ##Contacts:   
-[hyman_tan@126.com](mailto:hyman_tan@126.com)
+[hyman_tan@126.com](mailto:hyman_tan@126.com)    
+
+Google+: <a href="https://plus.google.com/118299002327327755156/posts?hl=zh-cn" rel="me" target="_blank"><span class="ruby"><span class="hljs-variable">@Harlen Tan</span></span></a>
