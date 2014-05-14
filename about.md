@@ -26,4 +26,5 @@ Someone to love. Something to hope. Something to do.
 * 业余HTML5/JS(WebKit工程师必备)
 
 ##Contacts:   
-<i class="icon envelope icon-2x"></i> [hyman_tan@126.com](mailto:hyman_tan@126.com)
+<i class="icon icon-envelope"></i>
+[hyman_tan@126.com](mailto:hyman_tan@126.com)
