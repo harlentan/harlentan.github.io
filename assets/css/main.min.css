@@ -3545,8 +3545,7 @@ span + .entry-title {
   margin-top: 0;
 }
 .entry-title {
-  font-family: 'volkhov', serif;
-  font-style: italic;
+  font-family: "verdana","ms song","Arial","Helvetica", "sans-serif";
   font-size: 36px;
   font-size: 2.25rem;
   font-weight: 400;
