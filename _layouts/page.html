@@ -27,6 +27,7 @@
 
 <div class="footer-wrapper">
   <footer role="contentinfo">
+    {% if site.google_ads_display %}
     <div class="google-ads" style="margin:10px 0;">
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <!-- fenesky_ad2 -->
@@ -38,6 +39,7 @@
                            (adsbygoogle = window.adsbygoogle || []).push({});
                    </script>
     </div>
+    {% endif %}
     {% include footer.html %}
   </footer>
 </div><!-- /.footer-wrapper -->
