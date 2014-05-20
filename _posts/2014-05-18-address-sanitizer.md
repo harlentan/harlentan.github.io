@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AddressSanitizier(ASAN)
-tags: [C++]
+tags: [C/C++]
 keywords: AddressSanitizier, ASAN, AndressSanitizier on Android, ASAN on Android
 description: AddressSanitizier(ASAN)Android上的使用方法
 comments: true
