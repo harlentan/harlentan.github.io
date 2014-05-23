@@ -18,7 +18,7 @@
       <header class="entry-header">
         <span class="entry-tags">
         <i class="icon icon-tags"></i>
-                {% for tag in page.tags %}<a href="{{ site.url }}/tags/#{{ tag | cgi_encode }}" title="Pages tagged {{ tag }}">{{ tag }}</a>{% unless forloop.last %}&nbsp;&bull;&nbsp;{% endunless %}{% endfor %}</span>
+                {% for tag in page.tags %}<a href="{{ site.url }}/tags.html#{{ tag | cgi_encode }}" title="Pages tagged {{ tag }}">{{ tag }}</a>{% unless forloop.last %}&nbsp;&bull;&nbsp;{% endunless %}{% endfor %}</span>
         {% if page.link %}
           <h1 class="entry-title"><a href="{{ page.link }}">{% if page.headline %}{{ page.headline }}{% else %}{{ page.title }}{% endif %} <span class="link-arrow">&rarr;</span></a></h1>
         {% else %}
