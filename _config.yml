@@ -37,6 +37,8 @@ links:
     url: /
   - title: 博客
     url: /blog.html
+  - title: 分类
+    url: /tags.html
   - title: 相册
     url: /gallery.html
   - title: 关于
