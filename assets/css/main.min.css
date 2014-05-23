@@ -251,7 +251,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "verdana","ms song","Arial","Helvetica", "sans-serif";
+  font-family: 'source-sans-pro',sans-serif;
+  line-height: normal;
 }
 a {
   text-decoration: none;
