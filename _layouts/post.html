@@ -60,6 +60,7 @@
 
 <div class="footer-wrapper">
   <footer role="contentinfo">
+    {% if site.tb_ads_display %}
     <div class="tb-ads" style="margin:10px 0;">
     <script type="text/javascript">
         document.write('<a style="display:none!important" id="tanx-a-mm_54632328_6096791_22470523"></a>');
@@ -73,6 +74,7 @@
         if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
     </script>
     </div>
+    {% endif %}
     {% include footer.html %}
   </footer>
 </div><!-- /.footer-wrapper -->
