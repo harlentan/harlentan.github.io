@@ -11,10 +11,10 @@ comments: true
 
 &emsp;&emsp;虽然JavaScriptCore和V8都分别推出了自己的跑分工具，但我个人认为这个跑分工具意义不是很大，而且各家都针对自己的特性来修改跑分工具。另外，业界也有很多人站出来批判，说单纯的测试JavaScriptCor和V8的性能没有意义，因为这些测试都只是单纯的测试JavaScript在不同引擎上的performance，而对于浏览器而言，渲染以及DOM操作才是真正影响用户体验的。对于这一点，我也不太赞同。因为现在已经有越来越多的应用和框架将JavaScript引擎从浏览器中剥离开来，特别是在Google V8崛起之后，JavaScript引擎开始逐渐独立出来，而不是非要跟浏览器绑定，例如Nodejs。在JavaScript引擎独立方面，JavaScriptCore就显得比较逊色了，目前JavaScriptCore还是跟WebKit绑定的非常紧密，甚至有些重要的特性需要依赖于WebKit，例如JavaScriptCore的GC机制，使得JavaScriptCore剥离出来比较困难，还需要修改源码，而V8则显得非常独立。
 
-&emsp;&emsp;对于JavaScript引擎的性能最终表现在时间和内存消耗。时间的消耗一方面是JS的一些运算逻辑，以及函数调用。通过一些压力测试，对于JavaScriptCore和V8在时间消耗上的性能对比图如下：   
+&emsp;&emsp;对于JavaScript引擎的性能最终表现在时间和内存消耗。时间的消耗一方面是JS的一些运算逻辑，以及函数调用。通过一些压力测试，在Android平台上对于JavaScriptCore和V8在时间消耗上的性能对比图如下：   
 
 
-![Alt text](/images/jsc-v8-performance.png)
+ ![Alt text](/images/jsc-v8-performance.png)
 
 * empty-loop
 空循环100000次(毫秒)
@@ -25,4 +25,4 @@ comments: true
 * call-native-func
 调用native方法100000次耗时(毫秒)
 
-从上面的对比图可以发现，除了调用native方法以外，其他几个V8都要好于JavaScriptCore.
+从上面的对比图可以发现，除了调用native方法以外，其他几个V8都要好于JavaScriptCore. 在2008年以后，JavaScriptCore有一些重大的重构，这些重构对于JavaScriptCore的性能有重大的提高。JavaScriptCore会根据同一个函数调用次数来做针对性的优化。V8相对于JavaScriptCore的优势在于使用了创建Hidden class的技术，使得能够快速创建对象以及快速访问属性。JavaScriptCore和V8都做到了可以动态将JavaScript代码编译成汇编。另外，V8在多线程方面处理的要比JavaScriptCore好得多。另外，根据我自己的项目经验，发现JavaScriptCore的内存回收效率要比V8要高，同样一段JavaScript代码，在V8上的平均内存占用要比JavaScriptCore高。
