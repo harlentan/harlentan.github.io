@@ -6,6 +6,7 @@ keywords: JavaScriptCore编程, 深入浅出JavaScriptCore, JavaScriptCore工作
 description: JavaScriptCore工作原理结合JavaScript和C++详细讲解了JavaScriptCore是如何工作的，JavaScript是如何调用C++的。
 category: C/C++, JavaScriptCore
 comments: true
+share: true
 ---
 ##前言
 &emsp;&emsp;JavaScript作为一种前端语言，特别是在WebApp概念炙热的当下，JavaScript变得越来越强大，一开始可能大多数JavaScript脚本只能被包含在HTML中在浏览器中运行，而现在JavaScript似乎什么都能做: JavaScript可以写HTTP Service(nodejs), 可以直接调用, 可以操作系统设备以及调用[WebAPI](https://developer.mozilla.org/en-US/Apps/Reference/General_Web_APIs), 在移动设备中甚至可以打电话、发短信、操作传感器等等。随着JavaScript引擎技术的不断发展和优化，JavaScript在某些场景下，毫不逊色与Java,C++。如此强大的JavaScript，了解其工作原理，有助于我们更好的去理解JavaScript，更好的去写JavaScript。本文主要针对JavaScriptCore来讲解其原理。讲解的过程中引用的一些avaScript内置对象，请参考[JavaScriptReference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)   

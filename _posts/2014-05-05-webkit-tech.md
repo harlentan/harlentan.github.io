@@ -6,6 +6,7 @@ keywords: WebKit, WebKit技术, WebKit技术点征集,你想学习哪些WebKit�
 description: 你想学习哪些WebKit技术？征集大家想知道的WebKit技术包括Chromium, HTML5, JavaScriptCore, Google V8相关技术点
 category: WebKit
 comments: true
+share: true
 ---
 
 &emsp;&emsp;根据自己在工作中WebKit开发的一些经验，跟几个国内WebKit牛人一起在整理一本关于WebKit技术的书，希望深入的跟大家讲讲WebKit相关技术。目前初步规划主要有一下几个大类围绕WebKit内核相关技术。

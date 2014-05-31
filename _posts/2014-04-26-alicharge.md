@@ -6,6 +6,7 @@ keywords: 阿里巴巴, 阿里巴巴主管, 阿里主管
 description: 阿里的主管喜欢什么样下属？如何成为主管喜欢的好员工？
 category: 杂记
 comments: true
+share: true
 ---
 
 &emsp;&emsp;对于整个阿里来说，每年到KPI考核的时候，很多员工都比较纠结和不平静，当然也包括我自己。很多人都会问，我的主管到底喜欢什么样的人？

@@ -6,6 +6,7 @@ keywords: JavaScriptCore内存占用不释放, 深入浅出JavaScriptCore, JavaS
 description: 结合JavaScriptCore源码分析讲解JavaScriptCore非Heap内存的管理以及如何快速降低JavaScriptCore的内存占用。
 category: C/C++, JavaScriptCore
 comments: true
+share: true
 ---
 
 &emsp;&emsp;由于JavaScript是为Web而设计的，使得JavaScript携带数据能力非常有限，而随着HTML5以及WebAPP的发展，对于JavaScript携带数据的能力要求越来越高。JavaScriptCor内置对象几乎不携带数据，除了Number, String之类以外。为了满足WebApp的数据能力，我们需要对JavaScriptCore进行扩展。也就意味着我们需要在JavaScriptCore里为JavaScript new/malloc一块内存来存放数据。这部分内存是没办法在JavaScriptCore的Heap上分配的，也即是我们所说的非Heap内存。对于非Heap内存如果管理不好，一方面会导致内存泄露，另一方面会导致JavaScriptCore的内存占用持续增高无法释放。

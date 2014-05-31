@@ -6,6 +6,7 @@ keywords: WebKit/WebCore中JavaScript在JavaScriptCore上的执行, JavaScriptCo
 description: 详细讲解了JavaScript在WebKit/WebCore的JavaScriptCore上的执行流程和机制
 category: C/C++
 comments: true
+share: true
 ---
 
 &emsp;&emsp;WebKit/WebCore中JavaScript在JavaScriptCore上的执行主要从WebKit/WebCore的层面详细讲解了JavaScript在WebKit内部的执行流程和机制。写前端的同学都知道，HTML页面内的javascript是无法操作其他页面以及其他Frame内部的元素和对象的。不仅如此，HTML内部的JavaScript不同的写法也会影响HTML的加载和运行效率，而JavaScript的执行效率对于移动端的WebApp影响尤其明显。那么，WebKit究竟是如何对JavaScript的执行环境进行隔离的呢？JavaScript的写法又是如何影响HTML的加载和执行效率的呢？本文将针对这些问题进行详细的分析和讲解。  

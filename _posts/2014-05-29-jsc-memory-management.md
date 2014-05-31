@@ -5,6 +5,7 @@ tags: [JavaScriptCore]
 keywords: JavaScriptCore内存管理, JavaScriptCore Heap, JavaScriptCore Heap内存申请, JavaScriptCore GC 垃圾回收
 description: 深入JavaScriptCore原理讲解JavaScriptCore内存管理。JavaScriptCore内存管理是JavaScriptCore里面最为复杂的一个模块。从JavaScript对象在JavaScriptCore Heap申请内存开始，到GC 回收JavaScriptCore Heap内存。
 comments: true
+share: true
 ---
 
 &emsp;&emsp;前面的一篇[《JavaScriptCore非Heap内存的管理》](http://www.fenesky.com/blog/2014/04/26/javascript-memory-occupation.html)主要是从JavaScriptCore非Heap内存的角度讲解JavaScriptCore是如何管理这部分内存的。对于JavaScriptCore的内存管理来讲，最重要的部分是JavaScriptCore对于Heap内存的管理。JavaScript里面所有对象的内存都是在JavaScriptCore的Heap里面分配的，JavaScriptCore的Heap内存管理直接影响到JavaScript的性能。今天就跟大家分享下我对于JavaScriptCore Heap内存管理的理解。

@@ -5,6 +5,7 @@ tags: [Google V8, JavaScriptCore]
 keywords: JavaScriptCore V8性能测试对比, JavaScriptCore性能测试, V8性能测试
 description: 通过测试数据来分析JavaScriptCore和V8性能差异，并通过JavaScript和V8的具体内部实现原理来讲解二者之间性能差异的原因
 comments: true
+share: true
 ---
 
 &emsp;&emsp;近几年随着Google V8的崛起，关于JavaScript引擎性能的争论就没有停止过。随着越来越多的应用将JavaScript引擎替换成V8，JavaScriptCore似乎处在一个孤军奋战的状态，无论是从接口易用性还是从性能方面，饱受诟病和摈弃。之前参加ARM的一个关于性能优化的会议的时候，当ARM技术同学听到还有人在使用JavaScriptCore的时候，感到非常的差异。那么JavaScriptCore是不是大家想想中的那么差呢？V8是不是就已经在各个方面超越了JavaScriptCore呢？关于这个话题，我也想了很久，一直都觉得对于JavaScriptCore和V8理解的不够透彻，不敢妄加评判。刚好今天周末杭州下雨，也没有其他的好的去处，打算好好的分析下这个问题。

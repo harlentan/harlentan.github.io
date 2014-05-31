@@ -5,6 +5,7 @@ tags: [JavaScriptCore]
 keywords: JavaScriptCore编程之编译JavaScriptCore, JavaScriptCore编程, 编译JavaScriptCore, Ubuntu 编译JavaScriptCore
 description: JavaScriptCore编程之编译JavaScriptCore 详细讲述了JavaScriptCore在Ubuntu下编译步骤
 comments: true
+share: true
 ---
 &emsp;&emsp;JavaScriptCore在Ubuntu 12.04下的编译步骤。JavaScriptCore的历史原因，使得JavaScriptCore单独编译比较麻烦。本文讲解了如何单独编译JavaScriptCore
 

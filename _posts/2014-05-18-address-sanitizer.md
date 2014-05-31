@@ -5,6 +5,7 @@ tags: [C/C++]
 keywords: AddressSanitizier, ASAN, AndressSanitizier on Android, ASAN on Android
 description: AddressSanitizier(ASAN)Android上的使用方法
 comments: true
+share: true
 ---
 
 &emsp;&emsp;[Address-Sanitizier(ASAN)](https://code.google.com/p/address-sanitizer/wiki/AddressSanitizer)是Google开发的一款用于检查C++内存错误的工具，类似于Valgrind。与Valgrind不同的是，使用ASAN检查内存，需要对应用程序进行重新编译。在编译阶段，需要将一些内存操作函数替换成ASAN定义和实现的函数，例如malloc, free, memcpy等等， LLVM 3.1和GCC 4.8以后，已经集成了ASAN。在其他平台上只需要添加编译选项-fsanitize=address然后优化选项在-O1以及以上即可。目前越来越多的程序都已经开始支持ASAN了，例如chromium, firefox等等。
