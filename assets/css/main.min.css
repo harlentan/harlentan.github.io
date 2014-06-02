@@ -243,7 +243,7 @@ a {
 }
 body {
   font-family: 'Open Sans', sans-serif;
-  color: #4d4e53;
+  color: #222222;
 }
 h1,
 h2,
@@ -3546,12 +3546,13 @@ span + .entry-title {
   margin-top: 0;
 }
 .entry-title {
-  font-family: 'Open Sans Light',sans-serif;
+  font-family: 'volkhov', serif;
+  font-style: italic;
   font-size: 36px;
   font-size: 2.25rem;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 1;
-  letter-spacing: -2px;
+  letter-spacing: -3px;
 }
 .entry-title a {
   color: #000000;
