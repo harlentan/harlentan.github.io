@@ -242,8 +242,8 @@ a {
   transition: all 0.2s ease;
 }
 body {
-  font-family: 'Open Sans',"verdana","ms song","Arial","Helvetica", "sans-serif";
-  color: #222222;
+  font-family: 'Open Sans', "sans-serif";
+  color: #4d4e53;
 }
 h1,
 h2,
@@ -251,8 +251,32 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'source-sans-pro',sans-serif;
+  font-family: 'Open Sans Light',sans-serif;
   line-height: normal;
+  font-weight: 200;
+}
+
+h1 {
+font-size: 48px;
+font-size: 3.4285714285714284rem;
+letter-spacing: -2px;
+}
+
+h2, h3 {
+  font-family: 'Open Sans',sans-serif;
+}
+
+h2 {
+font-size: 30px;
+font-size: 2.142857142857143rem;
+letter-spacing: -1px;
+font-weight: 700;
+}
+
+h3 {
+font-size: 24px;
+font-size: 1.7142857142857142rem;
+letter-spacing: -.5px;
 }
 a {
   text-decoration: none;
@@ -357,7 +381,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: 'source-code-pro', monospace;
+  font-family: Consolas,Monaco,'Andale Mono',monospace;
 }
 p code,
 li code {
@@ -3546,11 +3570,8 @@ span + .entry-title {
   margin-top: 0;
 }
 .entry-title {
-  font-family: 'volkhov', serif;
-  font-style: italic;
   font-size: 36px;
   font-size: 2.25rem;
-  font-weight: 400;
   line-height: 1;
   letter-spacing: -3px;
 }
