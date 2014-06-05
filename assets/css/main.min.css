@@ -3463,6 +3463,8 @@ body {
   }
 }
 .site-title {
+  font-size: 36px;
+  font-family: 'Open Sans', 'sans-serif';
   margin-bottom: 0;
   -webkit-animation-duration: 1s;
   -moz-animation-duration: 1s;
