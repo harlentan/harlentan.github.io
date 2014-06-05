@@ -242,7 +242,7 @@ a {
   transition: all 0.2s ease;
 }
 body {
-  font-family: "verdana","ms song","Arial","Helvetica", "sans-serif";
+  font-family: 'Open Sans',"verdana","ms song","Arial","Helvetica", "sans-serif";
   color: #222222;
 }
 h1,
