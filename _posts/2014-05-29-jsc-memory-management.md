@@ -96,21 +96,51 @@ DeadBlock结构非常简单，DeadBlock其实我们可以理解为每一块将�
 MarkedSpace::MarkedSpace(Heap* heap)
     : m_heap(heap)
 {
-    for (size_t cellSize = preciseStep; cellSize <= preciseCutoff; cellSize += preciseStep) {
-        allocatorFor(cellSize).init(heap, this, cellSize, MarkedBlock::None);
-        normalDestructorAllocatorFor(cellSize).init(heap, this, cellSize, MarkedBlock::Normal);
-        immortalStructureDestructorAllocatorFor(cellSize).init(heap, this, cellSize, MarkedBlock::ImmortalStructure);
+    for (size_t cellSize = preciseStep
+        ;cellSize <= preciseCutoff
+        ;cellSize += preciseStep) {
+        allocatorFor(cellSize).init(heap
+            ,this
+            ,cellSize, MarkedBlock::None);
+        normalDestructorAllocatorFor(cellSize).init(heap
+            ,this
+            ,cellSize
+            ,MarkedBlock::Normal);
+        immortalStructureDestructorAllocatorFor(cellSize).init(heap
+            ,this
+            ,cellSize
+            ,MarkedBlock::ImmortalStructure);
     }
 
-    for (size_t cellSize = impreciseStep; cellSize <= impreciseCutoff; cellSize += impreciseStep) {
-        allocatorFor(cellSize).init(heap, this, cellSize, MarkedBlock::None);
-        normalDestructorAllocatorFor(cellSize).init(heap, this, cellSize, MarkedBlock::Normal);
-        immortalStructureDestructorAllocatorFor(cellSize).init(heap, this, cellSize, MarkedBlock::ImmortalStructure);
+    for (size_t cellSize = impreciseStep
+        ;cellSize <= impreciseCutoff
+        ;cellSize += impreciseStep) {
+        allocatorFor(cellSize).init(heap
+            ,this
+            ,cellSize
+            ,MarkedBlock::None);
+        normalDestructorAllocatorFor(cellSize).init(heap
+            ,this
+            ,cellSize
+            ,MarkedBlock::Normal);
+        immortalStructureDestructorAllocatorFor(cellSize).init(heap
+            ,this
+            ,cellSize
+            ,MarkedBlock::ImmortalStructure);
     }
 
-    m_normalSpace.largeAllocator.init(heap, this, 0, MarkedBlock::None);
-    m_normalDestructorSpace.largeAllocator.init(heap, this, 0, MarkedBlock::Normal);
-    m_immortalStructureDestructorSpace.largeAllocator.init(heap, this, 0, MarkedBlock::ImmortalStructure);
+    m_normalSpace.largeAllocator.init(heap
+        ,this
+        ,0
+        ,MarkedBlock::None);
+    m_normalDestructorSpace.largeAllocator.init(heap
+        ,this
+        ,0
+        ,MarkedBlock::Normal);
+    m_immortalStructureDestructorSpace.largeAllocator.init(heap
+        ,this
+        ,0
+        ,MarkedBlock::ImmortalStructure);
 }
 
 {% endhighlight %}
