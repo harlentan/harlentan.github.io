@@ -1,3 +1,10 @@
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,hr,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figure,figcaption,hgroup,menu,footer,header,nav,section,summary,time,mark,audio,video
+{
+  margin:0;
+  padding:0;
+  border:0
+}
+
 article,
 aside,
 details,
@@ -260,15 +267,16 @@ h1 {
 font-size: 48px;
 font-size: 3.4285714285714284rem;
 letter-spacing: -2px;
+margin-bottom: 20px;
 }
 
-h2, h3 {
+h2, h3, h4{
   font-family: 'Open Sans',sans-serif;
+  margin-bottom: 12px
 }
 
 h2 {
 font-size: 30px;
-font-size: 2.142857142857143rem;
 letter-spacing: -1px;
 font-weight: 700;
 }
@@ -278,6 +286,21 @@ font-size: 24px;
 font-size: 1.7142857142857142rem;
 letter-spacing: -.5px;
 }
+
+h2, h3, h4 {
+line-height: 100%;
+}
+
+p, dl, table, pre {
+margin-bottom: 24px;
+}
+
+h4 {
+font-size: 18px;
+font-size: 1.2857142857142858rem;
+letter-spacing: -.25px;
+}
+
 a {
   text-decoration: none;
   color: #222222;
