@@ -8,9 +8,9 @@ comments: true
 share: true
 ---
 
-&emsp;&emsp;[Address-Sanitizier(ASAN)](https://code.google.com/p/address-sanitizer/wiki/AddressSanitizer)是Google开发的一款用于检查C++内存错误的工具，类似于Valgrind。与Valgrind不同的是，使用ASAN检查内存，需要对应用程序进行重新编译。在编译阶段，需要将一些内存操作函数替换成ASAN定义和实现的函数，例如malloc, free, memcpy等等， LLVM 3.1和GCC 4.8以后，已经集成了ASAN。在其他平台上只需要添加编译选项-fsanitize=address然后优化选项在-O1以及以上即可。目前越来越多的程序都已经开始支持ASAN了，例如chromium, firefox等等。
+[Address-Sanitizier(ASAN)](https://code.google.com/p/address-sanitizer/wiki/AddressSanitizer)是Google开发的一款用于检查C++内存错误的工具，类似于Valgrind。与Valgrind不同的是，使用ASAN检查内存，需要对应用程序进行重新编译。在编译阶段，需要将一些内存操作函数替换成ASAN定义和实现的函数，例如malloc, free, memcpy等等， LLVM 3.1和GCC 4.8以后，已经集成了ASAN。在其他平台上只需要添加编译选项-fsanitize=address然后优化选项在-O1以及以上即可。目前越来越多的程序都已经开始支持ASAN了，例如chromium, firefox等等。
 
-&emsp;&emsp;在Android 4.2以后已经集成了ASAN。源码位于external/compiler-rt/lib/asan。只有在eng版本中，ASAN才会被编译出来。如果要使用ASAN测试Android的动态库或者可执行程序，需要在Android.mk中添加`LOCAL_ADDRESS_SANITIZER := true`, 编译过程中有可能会有很多报错，但是这些报错都跟头文件包含相关，ASAN会对头文件包含造成影响，稍微修改头文件包含以及定义即可。ASAN会编译出libasan_preload.so和asanwrapper。有2中方式用来运行测试Android应用的内存。一种就是使用`asanwrapper  /system/bin/xxx  --options`。但是不是所有的Android程序都可以使用asanwrapper来启动。但是从asanwrapper.cc
+在Android 4.2以后已经集成了ASAN。源码位于external/compiler-rt/lib/asan。只有在eng版本中，ASAN才会被编译出来。如果要使用ASAN测试Android的动态库或者可执行程序，需要在Android.mk中添加`LOCAL_ADDRESS_SANITIZER := true`, 编译过程中有可能会有很多报错，但是这些报错都跟头文件包含相关，ASAN会对头文件包含造成影响，稍微修改头文件包含以及定义即可。ASAN会编译出libasan_preload.so和asanwrapper。有2中方式用来运行测试Android应用的内存。一种就是使用`asanwrapper  /system/bin/xxx  --options`。但是不是所有的Android程序都可以使用asanwrapper来启动。但是从asanwrapper.cc
 
 {% highlight C++ linenos %}
 #include <stdio.h>
