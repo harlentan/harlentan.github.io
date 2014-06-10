@@ -248,7 +248,7 @@ a {
   transition: all 0.2s ease;
 }
 body {
-  font-family: 'Open Sans', "sans-serif";
+  font-family: 'Open Sans', "verdana","ms song","Arial","Helvetica", "sans-serif";
   color: #4d4e53;
 }
 h1,
@@ -257,7 +257,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Open Sans Light',sans-serif;
+  font-family: 'Open Sans Light',"verdana","ms song","Arial","Helvetica", "sans-serif";
   line-height: normal;
   font-weight: 200;
 }
@@ -270,7 +270,7 @@ margin-bottom: 20px;
 }
 
 h2, h3, h4{
-  font-family: 'Open Sans',sans-serif;
+  font-family: 'Open Sans',"verdana","ms song","Arial","Helvetica", "sans-serif";
   margin-bottom: 12px
 }
 
@@ -3485,7 +3485,7 @@ body {
 }
 .site-title {
   font-size: 36px;
-  font-family: 'Open Sans', 'sans-serif';
+  font-family: 'Open Sans', "verdana","ms song","Arial","Helvetica", "sans-serif";
   margin-bottom: 0;
   -webkit-animation-duration: 1s;
   -moz-animation-duration: 1s;
@@ -3501,7 +3501,7 @@ body {
 }
 .site-description {
   margin-top: 0;
-  font-family: 'Open Sans', serif;
+  font-family: 'Open Sans', "verdana","ms song","Arial","Helvetica", "sans-serif";
   font-size: 16px;
   font-size: 1rem;
   font-weight: 400;
