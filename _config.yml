@@ -30,7 +30,7 @@ google_verify:
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:         
 google_ads_display: false
-tb_ads_display: true
+tb_ads_display: false
 # Links to include in top navigation
 # For external links add external: true
 links:
