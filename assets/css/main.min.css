@@ -3571,6 +3571,11 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
+
+.entry-header h1 {
+  font-family: 'volkhov', serif;
+  font-style: italic;
+}
 @media only screen and (min-width: 62.5em) {
   .entry-header {
     max-width: 100%;
