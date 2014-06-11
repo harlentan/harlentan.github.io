@@ -19,11 +19,10 @@ share: true
 
 * empty-loop
 空循环100000次(毫秒)
-
 * call-js-func
 调用一个空的js函数100000次耗时(毫秒)
-
 * call-native-func
 调用native方法100000次耗时(毫秒)
 
+<p/>
 从上面的对比图可以发现，除了调用native方法以外，其他几个V8都要好于JavaScriptCore. 在2008年以后，JavaScriptCore有一些重大的重构，这些重构对于JavaScriptCore的性能有重大的提高。JavaScriptCore会根据同一个函数调用次数来做针对性的优化。V8相对于JavaScriptCore的优势在于使用了创建Hidden class的技术，使得能够快速创建对象以及快速访问属性。JavaScriptCore和V8都做到了可以动态将JavaScript代码编译成汇编。另外，V8在多线程方面处理的要比JavaScriptCore好得多。另外，根据我自己的项目经验，发现JavaScriptCore的内存回收效率要比V8要高，同样一段JavaScript代码，在V8上的平均内存占用要比JavaScriptCore高。

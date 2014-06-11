@@ -14,26 +14,16 @@ share: true
 ##WebKit技术
 
 * WebKit加载
-
 * WebKit页面渲染
-
 * WebKit控件绘制
-
 * WebKit硬件加速
-
 * WebKit网络
-
 * IDL/WebKit bindings
-
 * JavaScriptCore/V8
-
 * WebKit点击事件处理
-
 * WebKit渲染和网络方面的性能优化
-
 * WebKit扩展
-
 * WebKit调试技术
 
-
+<p/>
 希望大家能说说希望了解和学习哪些WebKit技术点。来帮我们完善这本书，以助于我们更好的跟大家一起分享。请大家将自己想学习的WebKit技术回复在后面或者发邮件到[hyman_tan@126.com](mailto:hyman_tan@126.com)，我会进行统计的。谢谢！

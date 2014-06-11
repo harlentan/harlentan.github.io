@@ -214,7 +214,7 @@ void FrameLoader::checkLoadCompleteForThisFrame()
 }  
 {% endhighlight %}
 
-&emsp;&emsp;上面代码片段可以看出，这三个DocumentLoader的承接关系是一环扣一环。由于index.html加载在WebKit中分为2中方式：如果是前进后退，index.html是从CachedPage中加载的，FrameLoader::transitionToCommitted就是在从CachedPage中加载完成之后被调用的，void FrameLoader::checkLoadCompleteForThisFrame()这是在从网络加载完成之后被调用的。
+上面代码片段可以看出，这三个DocumentLoader的承接关系是一环扣一环。由于index.html加载在WebKit中分为2中方式：如果是前进后退，index.html是从CachedPage中加载的，FrameLoader::transitionToCommitted就是在从CachedPage中加载完成之后被调用的，void FrameLoader::checkLoadCompleteForThisFrame()这是在从网络加载完成之后被调用的。
 {% highlight java linenos %}
 void FrameLoader::recursiveCheckLoadComplete()  
 {  
@@ -247,7 +247,7 @@ void FrameLoader::checkLoadComplete()
 
 ###startLoadingMainResource
 
-&emsp;&emsp;在m_provisionalDocumentLoader调用startLoadingMainResource之后，就开始准备发送网络请求了。调用栈如下：
+在m_provisionalDocumentLoader调用startLoadingMainResource之后，就开始准备发送网络请求了。调用栈如下：
 {% highlight java linenos %}
 bool DocumentLoader::startLoadingMainResource(unsigned long identifier)  
 bool MainResourceLoader::load(const ResourceRequest& r, const SubstituteData& substituteData)  
@@ -263,7 +263,7 @@ PassRefPtr<ResourceLoaderAndroid> ResourceLoaderAndroid::start(
     FrameLoaderClient* client, bool isMainResource, bool isSync)  
 bool WebUrlLoaderClient::start(bool isMainResource, bool isMainFrame, bool sync, WebRequestContext* context) 
 {% endhighlight %}
-&emsp;&emsp;需要指出的是，虽然LoadUrl最后是在WebCore线程中执行的，但是最后资源下载是在Chromium\_net的IO线程中进行的。在资源下载完毕之后，网络数据会交给FrameLoaderClientAndroid
+需要指出的是，虽然LoadUrl最后是在WebCore线程中执行的，但是最后资源下载是在Chromium\_net的IO线程中进行的。在资源下载完毕之后，网络数据会交给FrameLoaderClientAndroid
 网络数据
 Android WebKit数据下载在Chromium\_net的IO线程中完成之后会通过WebUrlLoaderClient向WebCore提交数据。WebKt的调用栈如下：
 {% highlight C++ %}

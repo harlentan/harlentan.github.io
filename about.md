@@ -21,16 +21,13 @@ Someone to love. Something to hope. Something to do.
 ##Technology
 
 * C++
-
 * WebKit/Chromium
-
 * JavaScriptCore
-
 * Google V8
+* 业余HTML5/JS(WebKit工程师必备)
 
-* 业余HTML5/JS(WebKit工程师必备)  
 
-
+<p/>
 ##Contacts:   
 
 <i class="icon icon-envelope"></i>

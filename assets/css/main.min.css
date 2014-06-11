@@ -3724,6 +3724,9 @@ span + .entry-title {
 .entry-content li > a:hover {
   border-bottom-style: solid;
 }
+.entry-content li {
+  padding-bottom: 6px;
+}
 .post-list li > a {
   border-bottom-width: 0;
 }
