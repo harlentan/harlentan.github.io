@@ -19,12 +19,19 @@ Someone to love. Something to hope. Something to do.
 软件攻城师一枚。曾就职于搜狐，现就职于阿里巴巴。   
 
 ##Technology
+
 * C++
+
 * WebKit/Chromium
+
 * JavaScriptCore
+
 * Google V8
-* 业余HTML5/JS(WebKit工程师必备)
+
+* 业余HTML5/JS(WebKit工程师必备)  
+
 
 ##Contacts:   
+
 <i class="icon icon-envelope"></i>
 [hyman_tan@126.com](mailto:hyman_tan@126.com)
