@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 阿里的主管喜欢什么样的员工
-tags: [杂记]
+tags: [随笔]
 keywords: 阿里巴巴, 阿里巴巴主管, 阿里主管
 description: 阿里的主管喜欢什么样下属？如何成为主管喜欢的好员工？
 category: 杂记
