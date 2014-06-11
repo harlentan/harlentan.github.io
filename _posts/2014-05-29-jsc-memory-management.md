@@ -21,22 +21,22 @@ JavaScriptCore的Heap，是由JavaScriptCore通过mmap向系统映射的一块�
 
 在JavaScriptCore的Heap中，有三个重要的概念：`Region`，`Block`，`Cell`。他们的size大小以此递减。
 
-* Region：
+* Region：  
 Region，区域，对应于`class Region`。JavaScriptCore Heap内存是分区的，一个区是mmap映射的64K。当一个Region的内存用完之后，再继续创建下一个Region，也就是64K。
-* Block：
+* Block：   
 Block, 块，对应于`MarkedBlock`。Block是在Region内部分配的。一个Block的大小是64K，也就是说一个Region内部只有一个Block。
-* Cell：
+* Cell：   
 Cell，就是用来存放JSObject对象的。在JavaScriptCore中，没有专门的一个类来表示Cell。但是Cell的概念却对于内存分配和回收起着重要作用。Cell是JavaScriptCore Heap上内存分配的最小单位。Cell是在Block上分配的。Cell虽然没有特定的类来表示，但是Cell是由大小的， Cell的大小是根据一个特定逻辑计算出来的。另外，在Block创建的时候，就需要确定该Block内部Cell的大小。也就是说对于同一个Block来说，其内部的Cell大小是一样的，使得Cell的大小要大于或者等于JSObject，如果大于JSObject的size，必定将会有一定空间的浪费。
 
 <p/>
 ###Subspace
 Subspace是用来申请Block的。JavaScriptCore中，有三种Subspace：
 
-* normalDestructorSpace：
+* normalDestructorSpace：    
 Block内部Cell中存放的JSObject被析构的时候需要调用JSObject的destroy的Space
-* immortalStructureDestructorSpace：
+* immortalStructureDestructorSpace：   
 同normalDestructorSpace类似，尚未发现跟normalDestructorSpace不同之处，但是还是有差异，我之前使用JavaScriptCore的时候发现我写的JSObject如果是分配在immortalStructureDestructorSpace，会crash，在其他space则不会。这一点我还在最跟踪。
-* normalSpace：
+* normalSpace：    
 前两者之外的space都叫normalSpace。
 
 <p/>
