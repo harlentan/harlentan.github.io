@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 纪念我的爷爷
-tags: [Google V8]
+tags: [随笔]
 keywords: 纪念我的爷爷，爷爷，想念我的爷爷
 description: 纪念我的爷爷
 comments: true
