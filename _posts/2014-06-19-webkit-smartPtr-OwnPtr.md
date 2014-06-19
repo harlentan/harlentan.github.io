@@ -2,7 +2,8 @@
 layout: post
 title: 深入理解WebKit智能指针OwnPtr PassOwnPtr
 tags: [WebKit]
-keywords: 
+keywords: OwnPter, PassOwnPtr, WebKit智能指针, WebKit OwnPtr PassOwnPtr, WebKit OwnPtr, WebKit PassOwnPtr
+description: OwnPtr是基于ownership的智能指针。一个Raw pointer一旦交给OwnPtr管理，除非你使用leakPtr将这个Raw pointer从OwnPtr中leak出来，否则这个Raw Pointer的生命周期将有OwnPtr管理，这个管理就是控制这个Raw pointer的生命周期，甚至直接delete掉这个Raw pointer。OwnPtr::deleteOwnedPtr就是用来delete掉Raw pointer的。跟PassRefPtr类似，PassOwnPtr存在的意义就是防止OwnPtr在相互传递的时候会导致Raw pointer频繁的被析构，会带来很多不必要的麻烦。PassOwnPtr向PassOwnPtr或者OwnPtr转化的时候，只是导致Raw pointer的ownership发生转移，而不会导致Raw pointer被delete掉。我们可以简单的理解为：PassOwnPtr就是为了OwnPtr的传递而存在的。
 comments: true
 share: true
 ---
