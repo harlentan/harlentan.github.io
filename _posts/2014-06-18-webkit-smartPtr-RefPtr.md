@@ -140,7 +140,21 @@ RefPtr转化成PassRefPtr，再由PassRefPtr转化成Raw pointer 是一个比较
 
 ##Ref Count的保存
 
-上面讲了很多关于`ref count`引用计数的操作，这里我们需要明确一点，RefPtr和PassRefPtr并不保存Ref Count。Ref Count引用计数器是存放在Raw pointer的。RefPtr和PassRefPtr值针对Raw pointer进行ref和deref操作，也就意味着Raw 指针必须由ref和deref成员函数。WebKit中，一般需要使用RefPtr和PassRefPtr的类都继承于RefCounted或者ThreadSafeRefCounted。
+上面讲了很多关于`ref count`引用计数的操作，这里我们需要明确一点，RefPtr和PassRefPtr并不保存Ref Count。Ref Count引用计数器是存放在Raw pointer的。RefPtr和PassRefPtr对Raw pointer进行ref和deref操作，也就意味着Raw pointer必须有ref和deref成员函数。WebKit中，一般需要使用RefPtr和PassRefPtr的类都继承于RefCounted或者ThreadSafeRefCounted。
+<p/>
+RefCounted或者ThreadSafeRefCounted都继承自RefCountedBase。RefCountedBase中有个private成员变量就是`unsigned m_refCount`，并公开了`ref()`和`derefBase()`接口。其中，`ref()`就是对`m_refCount`做加一操作。`derefBase()`则是对`m_refCount`做减一操作并返回true 或者false，来标示是否需要delete this指针。
+
+<p/>
+看下RefCounted::deref的实现
+{% highlight C++ %}
+void deref()
+{
+    if (derefBase())
+        delete static_cast<T*>(this);
+}
+{% endhighlight %}
+通过derefBase返回的值来确定是否需要delete this指针。因为derefBase会对`m_refCount`做减一操作，减一之后结果如果是0，说明这个对象已经没有引用了，`derefBase`就会返回true，则可以delete this指针。
+
 
 ##RefPtr和PassRefPtr的使用规则
 
