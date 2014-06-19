@@ -156,6 +156,12 @@ void deref()
 通过derefBase返回的值来确定是否需要delete this指针。因为derefBase会对`m_refCount`做减一操作，减一之后结果如果是0，说明这个对象已经没有引用了，`derefBase`就会返回true，则可以delete this指针。
 
 
+##对Raw pointer生命周期的影响
+通过上面的分析，我们可以发现，RefPtr和PassRefPtr仅仅只是调用Raw pointer的`ref()`和`deref()`来改变Raw pointer的`m_refCount`。Raw pointer自己根据当前`m_refCount`的值来决定是否需要delete this。
+<p/>
+也就是说RefPtr和PassRefPtr并不直接参与Raw pointer的delete操作。这一点跟OwnPtr和PassOwnPtr有所不同，关于OwnPtr和PassOwnPtr后面会专门写一篇文章来讲解。
+
+
 ##RefPtr和PassRefPtr的使用规则
 
 1. 参数的传递要使用PassRefPtr。
