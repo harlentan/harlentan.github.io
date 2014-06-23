@@ -1,0 +1,54 @@
+---
+layout: page
+useFancybox: true
+---
+<style TYPE="text/css">
+body {
+    background: #959796 url(/images/wood-repeat.jpg);
+    color: #fff;
+}
+.container {
+    width: 100%; margin: 40px auto;
+}
+
+ul.mygallery li a {
+    float: left;
+    padding: 10px 10px 25px 10px;
+    background: #d9d9d9;
+    border: 1px solid #fff;
+    margin: 10px;
+}
+
+ul.mygallery {
+list-style:none;
+}
+
+.entry-content li {
+    padding-bottom:0;
+}
+
+.gallery-link .desc {
+    margin: 0 auto;
+    padding: 5px 0 5px 0;
+}
+</style>
+
+<div class="container">
+<ul class="mygallery">
+{% for gallery in page.galleries %}
+        <li>
+        <a class="gallery-link" rel="winterspyre " href="{{ gallery['gallery'] }}" ><img src="{{ gallery['gallery'] }}/thumbs/{{ gallery['best_image'] }}" class="thumbnail" width="150" height="150">
+                    <div>
+        <h3 class="desc">{{ gallery["catetory_tag"] }}</h3>
+        </div>
+        <div>
+        {{ gallery["images"] | size }} 张
+        </div>
+        </a>
+        </li>
+{% endfor %}
+</ul>
+</div>
+
+
+

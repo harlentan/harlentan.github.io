@@ -41,7 +41,7 @@ links:
   - title: 分类
     url: /tags.html
   - title: 相册
-    url: /gallery.html
+    url: /photos/index.html
   - title: 关于
     url: /about.html
     external: true
@@ -72,9 +72,34 @@ kramdown:
 include: [".htaccess"]
 exclude: ["lib", "config.rb", "Gemfile", "Capfile", "Gemfile.lock", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
 
-gallerytag:
-    dir: images/gallery
-    url: images/gallery
-    thumb_width: 250
-    thumb_height: 250
-    columns: 5
+#gallerytag:
+#    dir: images/gallery
+#    url: images/gallery
+#    thumb_width: 250
+#    thumb_height: 250
+#    columns: 5
+#
+
+gallery:
+  # path to the gallery
+  dir: photos
+  # title for gallery index
+  title: "Photos"
+  # title prefix for gallery page. title=title_prefix+gallery_name
+  title_prefix: "Photos: "
+  # field to control sorting of galleries for the index page
+  # (possible values are: title, date_time, best_image)
+  sort_field: "date_time"
+  # sizes for thumbnails
+  thumbnail_size:
+    x: 200
+    y: 200
+  # custom configuration for individual gallery
+  # best_image is image for the index page (defaults to last image)
+  galleries:
+    xiamen:
+      best_image: 01.jpg
+      catetory_tag: 厦门
+    xian:
+      best_image: 08.jpg
+      catetory_tag: 西安

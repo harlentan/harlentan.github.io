@@ -1,0 +1,42 @@
+---
+layout: page
+useFancybox: true
+---
+<style TYPE="text/css">
+body {
+    background: #959796 url(/images/wood-repeat.jpg);
+    color: #fff;
+}
+
+.container {
+    width: 100%; margin: 40px auto;
+}
+
+ul.mygallery li a {
+    float: left;
+    padding: 10px 10px 25px 10px;
+    background: #eee;
+    border: 1px solid #fff;
+    margin: 10px;
+}
+
+ul.mygallery {
+list-style:none;
+}
+
+.entry-content li {
+    padding-bottom:0;
+}
+</style>
+
+<div class="container">
+<ul class="mygallery">
+{% for image in page.images %}
+        <li>
+        <a class="gallery-link" href="{{ image }}"{% if site.gallery.lightbox %} rel="lightbox[{{ page.gallery }}]"{% endif %}>
+            <img class="gallery-image" src="thumbs/{{ image }}" />
+        </a>
+        </li>
+{% endfor %}
+</ul>
+</div>
