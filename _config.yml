@@ -98,7 +98,7 @@ gallery:
   # best_image is image for the index page (defaults to last image)
   galleries:
     xiamen:
-      best_image: 01.jpg
+      best_image: IMG_6776.jpg
       catetory_tag: 2012厦门
     xitang:
       best_image: IMG_5975.jpg
