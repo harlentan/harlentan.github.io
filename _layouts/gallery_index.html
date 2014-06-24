@@ -41,9 +41,12 @@ list-style:none;
                     <div>
         <h3 class="desc">{{ gallery["catetory_tag"] }}</h3>
         </div>
-        <div>
-        {{ gallery["images"] | size }} 张
-        </div>
+        <span>
+        {{ gallery["gallery_time"] }}[{{ gallery["images"] | size }} 张]
+        </span>
+        <span>
+        
+        </span>
         </a>
         </li>
 {% endfor %}

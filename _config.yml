@@ -98,18 +98,23 @@ gallery:
   # best_image is image for the index page (defaults to last image)
   galleries:
     xiamen:
-      best_image: IMG_6776.jpg
-      catetory_tag: 2012厦门
+      best_image: 750b657bjw1e0pmtdjbibj.jpg
+      catetory_tag: 厦门
+      gallery_time: 2013年1月
     xitang:
       best_image: IMG_5975.jpg
-      catetory_tag: 2012西塘
+      catetory_tag: 西塘
+      gallery_time: 2012年12月
     snowman:
       best_image: 2013-01-04 12.51.42_x12.jpg
-      catetory_tag: 2013雪人
+      catetory_tag: 雪人
+      gallery_time: 2013年1月
     2013_honeys_birthday:
       best_image: 2013-03-13 18.31.09_x10.jpg
-      catetory_tag: 2013年Someone's Birthday
+      catetory_tag: Someone's Birthday
+      gallery_time: 2013年3月
     2013xian:
       best_image: 2013-03-09 15.38.37_x3.jpg
       catetory_tag: 西安
+      gallery_time: 2013年3月
 
