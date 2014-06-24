@@ -89,10 +89,12 @@ module Jekyll
       begin
         best_image = site.config["gallery"]["galleries"][self.data["gallery"]]["best_image"]
         catetory_tag = site.config["gallery"]["galleries"][self.data["gallery"]]["catetory_tag"]
+        gallery_time = site.config["gallery"]["galleries"][self.data["gallery"]]["gallery_time"]
       rescue
       end
       self.data["catetory_tag"] = catetory_tag
       self.data["best_image"] = best_image
+      self.data["gallery_time"] = gallery_time
       begin
         self.data["date_time"] = EXIFR::JPEG.new("#{dir}/#{best_image}").date_time.to_i
       rescue
