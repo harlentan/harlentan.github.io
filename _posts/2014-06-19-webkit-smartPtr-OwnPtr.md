@@ -29,9 +29,9 @@ template <typename T> inline void deleteOwnedPtr(T* ptr)
 <p/>
 有三种操作可以导致deleteOwnedPtr被调用
 
-<div style="text-align:center" markdown="1">
+<center>
 ![Alt Text](/images/deleteOwnedPtr.svg)
-</div>
+</center>
 其中，clear是使用者主动调用的。赋值操作，一方面是OwnPtr复制给OwnPtr，另一方面是PassOwnPtr赋值给OwnPtr。当一个新的Raw pointer需要传递给OwnPtr的时候，需要将新的Raw pointer的ownership转移给OwnPtr，此时OwnPtr一定是需要将旧的Raw pointer delete掉的，因为OwnPtr是旧的Raw pointer的owner。另外，当OwnPtr被析构的时候，也需要将OwnPtr所维护的Raw pointer delete掉，这个比较好理解，owner被析构掉了，owner附属的一些属性和指针也必须被delete掉。
 
 ##PassOwnPtr
@@ -41,9 +41,9 @@ template <typename T> inline void deleteOwnedPtr(T* ptr)
 ##OwnPtr和PassOwnPtr结合使用
 先来看看OwnPtr、PassOwnPtr和Raw pointer的转化关系图
 
-<div style="text-align:center" markdown="1">
+<center>
 ![Alt Text](/images/ownPtr.svg)
-</div>
+</center>
 Raw pointer想要转化成OwnPtr，只有一条途径：使用adoptPtr先转化成PassOwnPtr，再由PassOwnPtr转化成OwnPtr。
 <p/>
 

@@ -14,8 +14,9 @@ share: true
 
 对于JavaScript引擎的性能最终表现在时间和内存消耗。时间的消耗一方面是JS的一些运算逻辑，以及函数调用。通过一些压力测试，在Android平台上对于JavaScriptCore和V8在时间消耗上的性能对比图如下：   
 
-
+<center>
  ![Alt text](/images/jsc-v8-performance.png)
+</center>
 
 * empty-loop
 空循环100000次(毫秒)

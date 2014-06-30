@@ -15,9 +15,9 @@ JavaScriptCore的Heap，是由JavaScriptCore通过mmap向系统映射的一块�
 
 ##JavaScriptCore Heap内存管理原理
 
-<div style="text-align:center" markdown="1">
+<center>
 ![Alt Text](/images/heap.svg)
-</div>
+</center>
 
 在JavaScriptCore的Heap中，有三个重要的概念：`Region`，`Block`，`Cell`。他们的size大小以此递减。
 
@@ -73,9 +73,9 @@ inline MarkedAllocator& MarkedSpace::allocatorFor(size_t bytes)
 其中bytes是JSObject的size, preciseCutoff是常量128， impreciseCutoff是常量32K。如果一个JSObject的size <= 128的，会在preciseAllocators数组中按照allocatorFor的算法选择一个MarkedAllocator来使用。我们可以推算下，size 在[121 - 128] 之间的JSObject使用的是preciseAllocators[15]，size在[113 - 120]之间的JSObject，使用的是preciseAllocators[14]，以此类推。
 讲到这里，可能有点晕了，看看下面的图：
 
-<div style="text-align:center" markdown="1">
+<center>
 ![Alt Text](/images/subspace.svg)
-</div>
+</center>
 
 
 
@@ -157,13 +157,13 @@ cellSize的计算其实也是分为precise和imprecise的。其中，preciseStep
 
 讲到这里，Heap内存管理的进本流程都已经讲完了，再来看下面这个图，就比较轻松了：
 
-<div style="text-align:center" markdown="1">
+<center>
 ![jsc-mem](/images/jsc-mem.svg)
-</div>
+</center>
 Heap的内存分配，首先会构造一个Region，这个Region是mmap出来的64k内存空间。紧接着，对Region进行划分为若干个MarkedBlock(64K)大小的区域，通常情况下其实一个Region内部只有一个MarkedBlock。但是此时还没有在该内存里面构造MarkedBlock。划分之后，会在每块MarkedBlock管理的64K内存的头部构造一个DeadBlock。在需要的时候，只需要返回DeadBlock的头指针，然后再该指针指向的内存地址上构造一个MarkedBlock。之后，需要对MarkedBlock内部Cell进行划分，这部分内存空间的大小是64K减去MarkedBlock本身size后的空间。然后根据上面的Cell Size的计算逻辑，将一个MarkedBlock管理的内存划分为若干个Cell，然后将空闲的Cell的FreeList返回。
 
 ###主要类图：
 
-<div style="text-align:center" markdown="1">
+<center>
 ![jsc-mem](/images/jsc-mem-class.svg)
-</div>
+</center>

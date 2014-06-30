@@ -93,9 +93,9 @@ void finish(PassRefPtr<Ring> ring)
 <p/>
 我们先来一个RefPtr、PassRefPtr和Raw Pointer之间的转换图
 
-<div style="text-align:center" markdown="1">
+<center>
 ![Alt Text](/images/passPtr.svg)
-</div>
+</center>
 
 ###RefPtr向PassRefPtr转化
 
