@@ -1,9 +1,9 @@
 ---
 layout: post
 title: 重新认识二级指针(Pointers to Pointers)
-tags: [C/C++]
-keywords: 二级指针, 双指针, 指针的指针, Pointers to Pointers
-description: 
+tags: [C/C++, 程序员自我修养]
+keywords: 二级指针, 双指针, 指针的指针, Pointers to Pointers, 程序员自我修养
+description: 四年前(2010年)，我写了一篇关于我自己对于二级指针(Pointers to Pointers)的理解：《深入理解双指针》。这篇文章在网上一直存在着很大的争议，后面的评论也有很多质疑的声音。通过这几年我对C/C++更加深入的理解，我觉得有必要重新写一篇对于二级指针(双指针)的理解。
 comments: true
 share: true
 ---
