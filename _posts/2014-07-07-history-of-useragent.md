@@ -28,7 +28,7 @@ And then Google built [Chrome](https://www.google.com/chrome/browser/), and Chro
 
 
 
-<div itemscope itemtype="http://schema.org/Product">
+<div style="visibility: none;" itemscope itemtype="http://schema.org/Product">
    <span itemprop="name">fenesky</span>
    <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
      Rated <span itemprop="ratingValue">4.8</span>/5 based on <span itemprop="reviewCount">10</span> reviews
