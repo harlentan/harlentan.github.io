@@ -15,7 +15,7 @@
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-190,-110)" stroke-linecap="butt">
       <path fill="none" d="M205 205 L285 205 L285 245 L205 245 Z" clip-path="url(#clipPath2)"/>
-      <text x="218.6094" y="228.9375" clip-path="url(#clipPath2)" font-family="'Consolas'" stroke="none" font-weight="bold" xml:space="preserve">countPtr</text>
+      <text x="228.5059" y="228.9375" clip-path="url(#clipPath2)" font-family="'Consolas'" stroke="none" font-weight="bold" xml:space="preserve">count</text>
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-190,-110)" stroke-linecap="butt">
       <path fill="none" d="M395.5 205 L524 205 L524 245 L395.5 245 Z" clip-path="url(#clipPath2)"/>

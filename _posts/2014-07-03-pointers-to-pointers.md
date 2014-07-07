@@ -221,7 +221,7 @@ int main(int argc, char** argv)
 {
     int count = 7;  
     int* countPtr = &count;
-    increase(count);
+    increase(countPtr);
     printf("count = %d\n", count);
     printf("countPtr = %p\n", countPtr);
     return 0;
@@ -283,4 +283,8 @@ int main(int argc, char** argv)
 ##总结
 首先，指针变量，它也是一个变量，在内存单元中也要占用内存空间。一级指针变量指向的内容是普通变量的值，二级指针变量指向的内容是一级指针变量的地址。
 
+
+<span class="rating-foreground" style="width:90%"> 
+   <meta itemprop="rating" content="4.5" /> 
+</span>
 
