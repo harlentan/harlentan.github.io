@@ -8,6 +8,12 @@ comments: true
 share: true
 ---
 
+<div style="display:none" itemscope itemtype="http://schema.org/Product">
+   <span itemprop="name">fenesky</span>
+   <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+     Rated <span itemprop="ratingValue">4.8</span>/5 based on <span itemprop="reviewCount">10</span> reviews
+</div>
+
 In the beginning there was [NCSA Mosaic](http://www.ncsa.illinois.edu/enabling), and Mosaic called itself NCSA_Mosaic/2.0 (Windows 3.1), and Mosaic displayed pictures along with text, and there was much rejoicing.  
 
 And behold, then came a new web browser known as [“Mozilla”](http://en.wikipedia.org/wiki/Mozilla), being short for “Mosaic Killer,” but Mosaic was not amused, so the public name was changed to Netscape, and Netscape called itself Mozilla/1.0 (Win3.1), and there was more rejoicing. And Netscape supported frames, and frames became popular among the people, but Mosaic did not support frames, and so came “user agent sniffing” and to “Mozilla” webmasters sent frames, but to other browsers they sent not frames.   
@@ -25,11 +31,3 @@ And Apple built Safari, and used KHTML, but added many features, and forked the 
 And Microsoft feared Firefox greatly, and Internet Explorer returned, and called itself Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0) and it rendered good code, but only if webmasters commanded it to do so.    
 
 And then Google built [Chrome](https://www.google.com/chrome/browser/), and Chrome used Webkit, and it was like Safari, and wanted pages built for Safari, and so pretended to be Safari. And thus Chrome used WebKit, and pretended to be Safari, and WebKit pretended to be KHTML, and KHTML pretended to be Gecko, and all browsers pretended to be Mozilla, and Chrome called itself Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.2.149.27 Safari/525.13, and the user agent string was a complete mess, and near useless, and everyone pretended to be everyone else, and confusion abounded.
-
-
-
-<div style="display:none" itemscope itemtype="http://schema.org/Product">
-   <span itemprop="name">fenesky</span>
-   <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-     Rated <span itemprop="ratingValue">4.8</span>/5 based on <span itemprop="reviewCount">10</span> reviews
-</div>
