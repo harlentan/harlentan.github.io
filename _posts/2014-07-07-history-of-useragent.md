@@ -8,12 +8,6 @@ comments: true
 share: true
 ---
 
-<div style="display:none" itemscope itemtype="http://schema.org/Product">
-   <span itemprop="name">fenesky</span>
-   <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-     Rated <span itemprop="ratingValue">4.8</span>/5 based on <span itemprop="reviewCount">10</span> reviews
-</div>
-
 In the beginning there was [NCSA Mosaic](http://www.ncsa.illinois.edu/enabling), and Mosaic called itself NCSA_Mosaic/2.0 (Windows 3.1), and Mosaic displayed pictures along with text, and there was much rejoicing.  
 
 And behold, then came a new web browser known as [“Mozilla”](http://en.wikipedia.org/wiki/Mozilla), being short for “Mosaic Killer,” but Mosaic was not amused, so the public name was changed to Netscape, and Netscape called itself Mozilla/1.0 (Win3.1), and there was more rejoicing. And Netscape supported frames, and frames became popular among the people, but Mosaic did not support frames, and so came “user agent sniffing” and to “Mozilla” webmasters sent frames, but to other browsers they sent not frames.   
