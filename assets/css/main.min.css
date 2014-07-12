@@ -3407,7 +3407,7 @@ select:focus {
   font-size: 32px;
   font-size: 2rem;
 }
-.search-form .icon-remove-sign {
+.search-form .fa-times-circle {
   position: absolute;
   top: .6rem;
   right: 1rem;

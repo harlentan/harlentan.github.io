@@ -30,5 +30,5 @@ Someone to love. Something to hope. Something to do.
 <p/>
 ##Contacts:   
 
-<i class="icon icon-envelope"></i>
-[hyman_tan@126.com](mailto:hyman_tan@126.com)（<i class="icon icon-info"></i> 讨论问题请先前往[留言板](/message.html)）
+<i class="fa fa-envelope"></i>
+[hyman_tan@126.com](mailto:hyman_tan@126.com)（<i class="fa fa-info"></i> 讨论问题请先前往[留言板](/message.html)）
