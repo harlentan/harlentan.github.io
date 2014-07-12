@@ -4,9 +4,12 @@ body {
 	width: 100%;
 	background-color: @white;
 	border-top: 5px solid @black;
-	@media @medium {
-		.font-rem(20);
-	}
+}
+
+@media only screen and (min-width: 48em) {
+  body {
+    line-height: 1.5;
+  }
 }
 
 // Top Navigation
@@ -28,7 +31,8 @@ body {
 		float: left;
 		list-style: none;
 		text-align: center;
-		.font-rem(14);
+        font-size: 14px;
+        font-size: 0.875rem;
 		text-transform: uppercase;
 		color: @white;
 		a:hover {
@@ -137,6 +141,8 @@ body {
 	}
 }
 .site-title {
+    font-size: 36px;
+    font-family: @alt-font;
 	margin-bottom: 0;
 	-webkit-animation-duration: 1s;
 	-moz-animation-duration: 1s;
@@ -151,7 +157,8 @@ body {
 .site-description {
 	margin-top: 0;
 	font-family: @alt-font;
-	.font-rem(16);
+    font-size: 16px;
+    font-size: 1rem;
 	font-weight: 400;
 	font-style: italic;
 	-webkit-animation-duration: 1s;
@@ -163,7 +170,8 @@ body {
     -o-animation-delay: 1s;
     animation-delay: 1s;
 	@media @medium {
-		.font-rem(20);
+        font-size: 20px;
+        font-size: 1.25rem;
 	}
 }
 
@@ -202,8 +210,9 @@ body {
 .entry-tags {
 	display: block;
 	margin-top: 2em;
-	text-transform: uppercase;
-	.font-rem(16);
+	text-transform: capitalize;
+    font-size: 16px;
+    font-size: 1rem;
 	font-weight: 600;
 	a { color: @text-color; }
 }
@@ -211,10 +220,8 @@ span + .entry-title {
 	margin-top: 0;
 }
 .entry-title {
-	font-family: @alt-font;
-	font-style: italic;
-	.font-rem(36);
-	font-weight: 400;
+    font-size: 36px;
+    font-size: 2.25rem;
 	line-height: 1;
 	letter-spacing: -3px;
 	a {
@@ -223,11 +230,13 @@ span + .entry-title {
 	}
 	@media @medium {
 		max-width: 600px;
-		.font-rem(52);
+        font-size: 52px;
+        font-size: 3.25rem;
 	}
 	@media @large {
 		max-width: 800px;
-		.font-rem(68);
+	    font-size: 68px;
+        font-size: 3.25rem;
 	}
 }
 .entry-wrapper {
@@ -252,8 +261,9 @@ span + .entry-title {
 	margin-bottom: 30px;
 	margin-left: auto;
 	display: block;
-	text-transform: uppercase;
-	.font-rem(14);
+	text-transform: capitalize;
+    font-size: 14px;
+    font-size: 0.875rem;
 	a { color: @text-color; }
 	@media @large {
 		float: left;
@@ -302,6 +312,9 @@ span + .entry-title {
 		}
 	}
 }
+.entry-content li {
+  padding-bottom: 6px;
+}
 .post-list {
 	li > a {
 		border-bottom-width: 0;
@@ -343,8 +356,9 @@ span + .entry-title {
 		float: right;
 	}
 	.entry-date {
-		.font-rem(14);
-		text-transform: uppercase;
+	    font-size: 14px;
+        font-size: 0.875rem;
+		text-transform: capitalize;
 		display: none;
 		@media @medium {
 			display: inline;
@@ -360,7 +374,8 @@ span + .entry-title {
 	.clearfix();
 	&.inline li {
 		float: left;
-		.font-rem(14);
+	    font-size: 14px;
+        font-size: 0.875rem;
 		line-height: 2.5;
 	}
 	a { 
@@ -371,7 +386,8 @@ span + .entry-title {
 		text-decoration: none;
 		span { 
 			vertical-align: super;
-			.font-rem(10);
+		    font-size: 10px;
+            font-size: 0.625rem;
 		}
 	}
 }
@@ -396,7 +412,8 @@ span + .entry-title {
 	margin: 2em auto;
 	text-align: center;
 	font-family: @alt-font;
-	.font-rem(14);
+    font-size: 14px;
+    font-size: 0.875rem;
 	font-style: italic;
 	color: lighten(@text-color,20);
 	a {
@@ -437,6 +454,12 @@ span + .entry-title {
 	width: auto;
 	margin-right: 10px;
 }
+
+#yahoo-wm-qt {
+  width: auto;
+  margin-right: 10px;
+}
+
 #goog-wm-sb {
 	display: inline-block;
 	padding: 8px 20px;
@@ -451,4 +474,42 @@ span + .entry-title {
 		background-color: @white;
 		color: @black;
 	}
+}
+
+#yahoo-wm-sb {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #000000;
+  color: #ffffff;
+  border: 2px solid #000000 !important;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+#yahoo-wm-sb:visited {
+  color: #ffffff;
+}
+#yahoo-wm-sb:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+.gallery-item {
+    float: left;
+    margin-top: 10px;
+    text-align: center;
+    width: 30%;
+}
+.gallery .gallery-icon img {
+    border: 1px 
+    solid #ddd;
+    padding: 6px;
+}
+
+#post-entry-content p a {
+  color: #0095dd;
+  border-bottom: none;
+}
+
+#post-entry-content p a:hover {
+  border-bottom: 1px solid #0095dd;
 }
