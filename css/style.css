@@ -3,14 +3,13 @@
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
 @import url("font-awesome.min.css");
 
 /* Basic */
 
 	body, input, select, textarea {
 		color: white;
-		font-family: 'Source Sans Pro', sans-serif;
+		font-family:Consolas, Monaco, 'Andale Mono', monospace;
 		font-size: 15pt;
 		font-weight: 300 !important;
 		letter-spacing: -0.025em;
@@ -192,7 +191,7 @@
 
 		#header h1 {
 			font-size: 4.35em;
-			font-weight: 900;
+			font-weight: 400;
 			letter-spacing: -0.035em;
 			line-height: 1em;
 		}
