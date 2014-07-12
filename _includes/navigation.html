@@ -10,8 +10,8 @@
 				{% endif %} 
 			</li>
 	        {% endfor %}
-	        <li><a href="{{ site.url }}/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
-	        {% if site.search %}<li class="dosearch"><i class="icon-search"></i> Search</li>{% endif %}
+	        <li><a href="{{ site.url }}/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss"></i> Feed</a></li>
+	        {% if site.search %}<li class="dosearch"><i class="fa fa-search"></i> Search</li>{% endif %}
 	    </ul>
 	</nav>
 </div><!-- /.navigation-wrapper -->
@@ -21,7 +21,7 @@
 {% if site.search %}<div class="search-wrapper">
 	<div class="search-form">
 		<input type="text" class="search-field" placeholder="Search...">
-		<i class="icon-remove-sign icon-2x"></i>
+		<i class="fa fa-times-circle fa-2x"></i>
 		<ul class="search-results post-list"></ul><!-- /.search-results -->
 	</div><!-- /.search-form -->
 </div><!-- ./search-wrapper -->{% endif %}

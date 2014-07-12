@@ -303,3 +303,24 @@ overflow: visible; }
               ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
               ~"only screen and (min-resolution: 144dpi)",
               ~"only screen and (min-resolution: 1.5dppx)";
+	      
+// Awesome Font
+// --------------------------
+
+.fa-icon-rotate(@degrees, @rotation) {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=@rotation);
+  -webkit-transform: rotate(@degrees);
+     -moz-transform: rotate(@degrees);
+      -ms-transform: rotate(@degrees);
+       -o-transform: rotate(@degrees);
+          transform: rotate(@degrees);
+}
+
+.fa-icon-flip(@horiz, @vert, @rotation) {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=@rotation, mirror=1);
+  -webkit-transform: scale(@horiz, @vert);
+     -moz-transform: scale(@horiz, @vert);
+      -ms-transform: scale(@horiz, @vert);
+       -o-transform: scale(@horiz, @vert);
+          transform: scale(@horiz, @vert);
+}
