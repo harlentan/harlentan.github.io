@@ -325,8 +325,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Open Sans Light', "verdana", "ms song", "Arial", "Helvetica", "sans-serif";
-  font-weight: 200;
+  font-family: 'Open Sans', "verdana", "ms song", "Arial", "Helvetica", "sans-serif";
+  font-weight: 300;
   line-height: normal;
 }
 h1 {
@@ -340,6 +340,7 @@ h3,
 h4 {
   font-family: 'Open Sans', "verdana", "ms song", "Arial", "Helvetica", "sans-serif";
   margin-bottom: 12px;
+  font-weight: 400;
 }
 h2 {
   font-size: 30px;
