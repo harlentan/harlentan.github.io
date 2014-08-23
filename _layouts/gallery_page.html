@@ -33,8 +33,8 @@ list-style:none;
 <ul class="mygallery">
 {% for image in page.images %}
         <li>
-        <a class="gallery-link" href="{{ image }}"{% if site.gallery.lightbox %} rel="lightbox[{{ page.gallery }}]"{% endif %}>
-            <img class="gallery-image" src="thumbs/{{ image }}" />
+        <a class="gallery-link" href="{{ site.asset_url }}/{{page.path | remove: "index.html"}}{{ image }}"{% if site.gallery.lightbox %} rel="lightbox[{{ page.gallery }}]"{% endif %}>
+            <img class="gallery-image" src="{{ site.asset_url }}/{{page.path | remove: "index.html"}}thumbs/{{ image }}" />
         </a>
         </li>
 {% endfor %}

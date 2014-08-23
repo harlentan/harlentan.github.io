@@ -37,7 +37,7 @@ list-style:none;
 <ul class="mygallery">
 {% for gallery in page.galleries %}
         <li>
-        <a class="gallery-link" rel="winterspyre " href="{{ gallery['gallery'] }}" ><img src="{{ gallery['gallery'] }}/thumbs/{{ gallery['best_image'] }}" class="thumbnail" width="150" height="150">
+        <a class="gallery-link" rel="winterspyre " href="{{ gallery['gallery'] }}" ><img src="{{ site.asset_url }}/{{page.path | remove: "index.html"}}{{ gallery['gallery'] }}/thumbs/{{ gallery['best_image'] }}" class="thumbnail" width="150" height="150">
                     <div>
         <h3 class="desc">{{ gallery["catetory_tag"] }}</h3>
         </div>
