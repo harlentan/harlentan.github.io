@@ -1,1 +1,3 @@
+User-Agent: *
+Disallow: /photos/
 Sitemap: http://www.fenesky.com/sitemap.xml
