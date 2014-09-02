@@ -39,7 +39,30 @@ A& getInstance()
     return obj;
 }
 {% endhighlight %}
-这段代码弥补了上面提到的全局指针和静态全局变量的缺点。避免了指针的直接传递，保证了全局对象的单实例。由于将拷贝构造函数声明为private，使得所有需要使用A对象的地方，都需要声明为引用，这样，即便是进程结束，其构造函数也不会被调用。
+这段代码弥补了上面提到的全局指针和静态全局变量的缺点。避免了指针的直接传递，保证了全局对象的单实例。由于将拷贝构造函数声明为private，使得所有需要使用A对象的地方，都需要声明为引用，这样，即便是进程结束，其构造函数也不会被调用。   
+
+下面这段代码摘自WebKit中WTF的StdLibExtras.h
+{% highlight C++ linenos %}
+// Use these to declare and define a static local variable (static T;) 
+// so that it is leaked so that its destructors are not called at exit.
+// Using this macro also allows workarounds a compiler bug present in 
+// Apple's version of GCC 4.0.1.
+#ifndef DEFINE_STATIC_LOCAL
+#if COMPILER(GCC) && defined(__APPLE_CC__)  \
+	&& __GNUC__ == 4 \
+	&& __GNUC_MINOR__ == 0 \
+	&& __GNUC_PATCHLEVEL__ == 1
+#define DEFINE_STATIC_LOCAL(type, name, arguments) \
+    static type* name##Ptr = new type arguments; \
+    type& name = *name##Ptr
+#else
+#define DEFINE_STATIC_LOCAL(type, name, arguments) \
+    static type& name = *new type arguments
+#endif
+#endif
+{% endhighlight %}
+WebKit中，有很多对象都是使用DEFINE\_STATIC\_LOCAL来定义的：
+>>Use these to declare and define a static local variable (static T;) so that it is leaked so that its destructors are not called at exit.Using this macro also allows workarounds a compiler bug present in Apple's version of GCC 4.0.1.
 
 ##全局对象何时被析构？
 很多C++编程规范中，全局对象都是禁止使用的，例如Google的C++ code style的[Static and Global Variables](http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml?showone=Static_and_Global_Variables#Static_and_Global_Variables)。原因是因为类的对象作为全局对象的时候，全局对象的析构顺序是由全局对象的构造顺序决定的，但是全局对象的构造顺序又是不确定的，不同的平台，不同的系统，甚至是不同的Build之间，全局对象的构造顺序都是不一样的。但是有一点是可以确定的，全局对象的析构一定是出现在程序的main()结束之后或者exit()函数调用之后。除了上面提到的方法可以禁止全局对象被析构以外，还有一个方法即使quick\_exit。程序结束的时候调用quick\_exit来替代exit(),这样，全局对象的析构函数就不会被调用了。
