@@ -10,7 +10,7 @@ share: true
 
 前面一篇[《深入理解WebKit智能指针RefPtr PassRefPtr》](http://www.fenesky.com/blog/2014/06/18/webkit-smartPtr-RefPtr.html)详细的讲解了WebKit的智能指针RefPtr和PassRefPtr。RefPtr和PassRefPtr是基于引用计数器的智能指针，在WebKit还有一种重要的智能指针OwnPtr和PassOwnPtr。从名称上可以看出，OwnPtr和PassOwnPtr是基于ownership的智能指针。
 
-有了[《深入理解WebKit智能指针RefPtr PassRefPtr》](http://www.fenesky.com/blog/2014/06/18/webkit-smartPtr-RefPtr.html)这一章的基础，再来理解OwnPtr和PassOwnPtr会比较容易一点。智能指正本省其实是一个对象，那么作为对象，除了传递就是赋值了，还有就是销毁。智能指针的传递和赋值，就要涉及到ownership的传递了。
+有了[《深入理解WebKit智能指针RefPtr PassRefPtr》](http://www.fenesky.com/blog/2014/06/18/webkit-smartPtr-RefPtr.html)这一章的基础，再来理解OwnPtr和PassOwnPtr会比较容易一点。智能指针本省其实是一个对象，那么作为对象，除了传递就是赋值了，还有就是销毁。智能指针的传递和赋值，就要涉及到ownership的传递了。
 
 ##OwnPtr
 
