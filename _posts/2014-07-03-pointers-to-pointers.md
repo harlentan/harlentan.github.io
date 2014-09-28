@@ -246,7 +246,7 @@ int main(int argc, char** argv)
 
 [Dereference operator](http://en.wikipedia.org/wiki/Dereference_operator)
 
-对于一个普通变量，引用操作，得到的是一级指针。一级指针传递到函数内部，虽然这个一直指针的值会copy一份到临时变量，但是这个临时变量的内容是一个指针，通过->解引用一个地址可以修改该地址所指向的内存单元的值。
+对于一个普通变量，引用操作，得到的是一级指针。一级指针传递到函数内部，虽然这个一级指针的值会copy一份到临时变量，但是这个临时变量的内容是一个指针，通过->解引用一个地址可以修改该地址所指向的内存单元的值。
 
 <center>![Alt Text](/images/Pointer2Pointer.svg)</center>
 
