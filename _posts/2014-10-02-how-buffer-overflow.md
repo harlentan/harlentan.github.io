@@ -2,8 +2,8 @@
 layout: post
 title: Buffer Overflow Attack
 tags: [程序员自我修养, C/C++]
-keywords:
-description:
+keywords: Buffer Overflow Attack, Stack基本原理
+description: Buffer Overflow通常指的是程序在向一个Buffer写入数据的时候，超出了Buffer的边界，从而对超出Buffer范围的内存进行写入。Buffer Overflow，会导致程序的一些异常行为，而容易被利用，使得程序遭到攻击。Buffer Overflow分为Heap和Stack，我这里主要讲解Stack上的Buffer Overflow。在讲解Buffer Overflow Attack之前，我们需要复习系C语言Stack的工作方式和原理。
 category: 程序员自我修养
 comments: true
 share: true
@@ -194,7 +194,7 @@ int main(int argc, char** argv)
 
     gcc -g -m32 -fno-stack-protector stack.c
 -fno-stack-protector是为了disable编译器对stack溢出的保护。
-我们现执行一遍，查看hack函数的地址：
+我们先执行一遍，查看hack函数的地址：
 
     ./a.out hello
 我的输出如下：
