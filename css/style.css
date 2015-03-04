@@ -85,7 +85,7 @@
 		-ms-transform: translate3d(0,0,0);
 		transform: translate3d(0,0,0);
 		background-color: #348cb2;
-		background-image: url("http://fenesky.aliapp.com/css/images/bg.jpg");
+		background-image: url("http://www.fenesky.com/css/images/bg.jpg");
 		background-position: bottom left;
 		background-repeat: repeat-x;
 		height: 100%;
@@ -119,7 +119,7 @@
 		-ms-animation: overlay 1.5s 1.5s forwards;
 		animation: overlay 1.5s 1.5s forwards;
 		background-attachment: fixed, fixed;
-		background-image: url("http://fenesky.aliapp.com/css/images/overlay-pattern.png"), url("http://fenesky.aliapp.com/css/images/overlay.svg");
+		background-image: url("http://www.fenesky.com/css/images/overlay-pattern.png"), url("http://www.fenesky.com/css/images/overlay.svg");
 		background-position: top left, center center;
 		background-repeat: repeat, no-repeat;
 		background-size: auto, cover;
